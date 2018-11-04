@@ -1,0 +1,26 @@
+{
+  "name": "laborapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "n"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanArias510/Laborapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanArias510/Laborapp/issues"
+  },
+  "homepage": "https://github.com/JonathanArias510/Laborapp#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  },
+  "description": ""
+}
