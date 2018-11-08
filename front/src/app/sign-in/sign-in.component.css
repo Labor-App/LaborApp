@@ -1,0 +1,17 @@
+
+.sign-in-container{
+	width: 90%;
+
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.img-container {
+	width: 200px;
+}
+.inputs{
+	width: 100%;
+}

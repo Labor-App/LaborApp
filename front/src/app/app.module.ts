@@ -4,10 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//Forms
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 //Animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 //Material
-import { angularMaterialModule } from './angularMaterial';
+import { MaterialModule } from './material';
+
+//Components
 import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
@@ -19,7 +25,11 @@ import { SignInComponent } from './sign-in/sign-in.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    angularMaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

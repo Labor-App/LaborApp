@@ -1,3 +1,16 @@
-<div class="">
-  <div><img src="\assets\img\logo.png" alt="Logo Laborapp"></div>
+<div class="sign-in-container">
+  <div class="img-container">
+    <img src="\assets\img\logo.png" alt="Logo Laborapp" width="200px">
+  </div>
+
+  <mat-form-field class="inputs">
+      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field class="inputs">
+    <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field>
+
+
 </div>
