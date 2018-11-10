@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import {FormControl, Validators} from '@angular/forms';
+//Forms
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+
+//SnackBar
+import {MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -9,17 +15,33 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  constructor(public snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
-
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
-            '';
+  //MatSnackBar
+  openSnackBar() {
+    this.snackBar.open('Credenciales incorrectaas', '', {
+      duration: 2500,
+    });
   }
+
+  //Email
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    }
+
+  emailFormControl = new FormControl('', [
+   Validators.required,
+   Validators.email,
+  ]);
+
+  matcher = new ErrorStateMatcher();
+
+  //Password
+  hide = true;
+
+
 
 }

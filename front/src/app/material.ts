@@ -8,14 +8,18 @@ import * as Material from '@angular/material';
     Material.MatButtonModule,
     Material.MatIconModule,
     Material.MatInputModule,
-    Material.MatFormFieldModule
+    Material.MatFormFieldModule,
+    Material.MatGridListModule,
+    Material.MatSnackBarModule    
 
   ],
   exports: [
     Material.MatButtonModule,
     Material.MatIconModule,
     Material.MatInputModule,
-    Material.MatFormFieldModule
+    Material.MatFormFieldModule,
+    Material.MatGridListModule,
+    Material.MatSnackBarModule
 
   ],
 })
