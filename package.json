@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./back/server.js"
+    "dev": "nodemon ./back/server.js",
+    "start": "node ./back/server.js"
   },
   "repository": {
     "type": "git",
