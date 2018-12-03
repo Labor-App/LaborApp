@@ -1,9 +1,10 @@
 {
-  "name": "laborapp",
+  "name": "LaborApp",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./server/server.js"
+    "dev": "nodemon ./back/server.js",
+    "start": "node ./back/server.js"
   },
   "repository": {
     "type": "git",

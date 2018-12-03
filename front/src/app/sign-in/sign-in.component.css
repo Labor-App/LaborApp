@@ -1,0 +1,42 @@
+
+.sign-in-container{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.sign-in-container .img-container,
+.sign-in-container .img-container img{
+	width: 15rem;
+}
+.sign-in-container form{
+	width: 100%
+}
+.sign-in-container form .inputs{
+	width: 100%;
+	margin-bottom: 1rem;
+}
+.sign-in-container form .link{
+	display: flex;
+	justify-content: space-between;
+	color: #1899fc;
+	margin-bottom: 1rem;
+}
+.sign-in-container form .link a,
+/* .sign-in-container form h3, */
+.sign-in-container button{
+	font-size: 1rem;
+	line-height: 2.25rem;
+	padding: 0 1rem;
+}
+.sign-in-container form .link a{
+	padding: 0 0.09375rem;
+}
+.sign-in-container .btn-ingresar{
+	background: #1899fc;
+	color: #fff;
+}
