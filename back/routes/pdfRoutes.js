@@ -61,7 +61,7 @@
     };
 
     generatePdf(document, (mensaje) => {
-    res.download(path.join(__dirname, '../funcionalidad-pdf/docs/filname.pdf'));
+    res.download(path.join(__dirname, '../funcionalidad-pdf/docs/Demanda.pdf'));
       console.log(mensaje);
     })
 
