@@ -13,7 +13,7 @@ let sendEmail = ( destinatario, nombre = null ) =>{
     }
   });
 
-  let text = `Hemos generado su demanda exitosamente ${ nombre === null? '' : nombre }`;
+  let text = `Hemos generado su demanda exitosament ${ nombre === null? '' : nombre }`;
 
   let mailOptions = {
     from: 'jonathancolombia510@gmail.com',
