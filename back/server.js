@@ -1,17 +1,21 @@
-const path = require('path');
-const express = require('express');
-const app = express();
+//Modulos
+  const path = require('path');
+  const express = require('express');
+  const app = express();
+//
 
-// Configuracion
-app.set('port', process.env.PORT || 3000);
+let port = process.env.PORT || 3000;
 
-// Midllewares
+//Rutas
+  app.use('/pdf', require('./routes/pdfRoutes'));
 
-// Static
+  app.use('/send', require('./routes/emailRoutes'))
+//
 
-app.use('/static', express.static(__dirname + '/'));
 
-// Server Listen
-app.listen(app.get('port'), () => {
-  console.log('Server on port',app.get('port'));
-})
+//Static Files
+  app.use(express.static(path.join(__dirname, '../front/dist/LaborApp')));
+//
+
+
+app.listen(port, () => console.log('server on port ${ port }'));
