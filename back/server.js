@@ -4,20 +4,18 @@
   const app = express();
 //
 
+let port = process.env.PORT || 3000;
 
 //Rutas
-// const pdfRoutes = require('./routes/pdfRoutes');
+  app.use('/pdf', require('./routes/pdfRoutes'));
 
-
-app.use('/pdf', require('./routes/pdfRoutes'));
-
-
+  app.use('/send', require('./routes/emailRoutes'))
+//
 
 
 //Static Files
-app.use(express.static(path.join(__dirname, '../front/dist/LaborApp')));
+  app.use(express.static(path.join(__dirname, '../front/dist/LaborApp')));
+//
 
 
-
-
-app.listen(3000, () => console.log('server on port 3000'));
+app.listen(port, () => console.log('server on port ${ port }'));

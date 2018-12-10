@@ -19,6 +19,7 @@
   "homepage": "https://github.com/JonathanArias510/Laborapp#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "nodemailer": "^4.7.0",
     "pdfmake": "^0.1.39"
   },
   "devDependencies": {

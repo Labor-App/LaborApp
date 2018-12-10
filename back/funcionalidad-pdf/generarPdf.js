@@ -16,9 +16,11 @@ function generatePdf(docDefinition, callback) {
         bolditalics: path.join(__dirname, './fuentes/Roboto-MediumItalic.ttf')
       }
     };
+    //
+
+
     const printer = new PdfMakePrinter(fontDescriptors);
     const doc = printer.createPdfKitDocument(docDefinition);
-
 
 
     doc.pipe(
