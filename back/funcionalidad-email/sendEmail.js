@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const nodemailer = require('nodemailer');
 
 
@@ -21,8 +22,8 @@ let sendEmail = ( destinatario, nombre = null ) =>{
     subject: 'Hola desde node',
     text: text,
     attachments: {
-      filename: 'demanda.pdf',
-      path: path.join(__dirname, '../funcionalidad-pdf/docs/Demanda.pdf' )
+      filename: `Demanda.pdf-${ nombre }`,
+      path: path.join(__dirname, `../funcionalidad-pdf/docs/Demanda-${ nombre }.pdf` )
     }
   };
 
@@ -31,7 +32,11 @@ let sendEmail = ( destinatario, nombre = null ) =>{
     if (err) {
       console.log(err);
     }else{
-      console.log('Email sent: ' + info.response);
+      console.log('email send');
+      fs.unlink( mailOptions.attachments.path, err => {
+        if (err) throw err;
+        console.log( `PDF eliminado ${ mailOptions.attachments.path}`);
+      })
     }
   });
 

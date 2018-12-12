@@ -3,9 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 
+let generarPdf = (docDefinition, docName) => {
 
-function generatePdf(docDefinition, callback) {
-  try {
 
     //Fuente
     const fontDescriptors = {
@@ -18,26 +17,46 @@ function generatePdf(docDefinition, callback) {
     };
     //
 
-
     const printer = new PdfMakePrinter(fontDescriptors);
     const doc = printer.createPdfKitDocument(docDefinition);
 
+    const chunks = [];
 
-    doc.pipe(
-        fs.createWriteStream(path.join(__dirname, '/docs/Demanda.pdf'))
-        .on("error", (err) => callback(err.message))
-    );
+    let resultado;
+
+    doc.on('data', (chunk) => {
+      chunks.push(chunk);
+    });
+
     doc.on('end', () => {
-      callback("PDF creado y almacenado");
+      const result = Buffer.concat(chunks);
+      fs.writeFileSync(path.join(__dirname, `/docs/Demanda-${ docName }.pdf`), result);
     });
 
     doc.end();
 
-  } catch(err) {
-    throw(err);
+    return {
+      message: 'Documento creado',
+      direccion: path.join(__dirname, `/docs/Demanda-${ docName }.pdf`)
+    };
+
+
+
+}
+
+let existe = (direccion) => {
+  try {
+    fs.accessSync(direccion , fs.constants.R_OK | fs.constants.W_OK);
+    return true;
+  } catch (err) {
+    
+    return false;
   }
-};
+
+
+}
 
 module.exports = {
-  generatePdf
+  generarPdf,
+  existe
 };
