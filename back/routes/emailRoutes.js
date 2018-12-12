@@ -9,7 +9,10 @@
   router.get('/',  (req, res) => {
 
     sendEmail('andresarias510@gmail.com', 'jonathan');
-
+    res.json({
+      ok: true,
+      mensaje: 'email enviado'
+    })
   });
 //
 module.exports = router;

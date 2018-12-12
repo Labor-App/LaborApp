@@ -1,18 +1,19 @@
 //Modulos
-  const path = require('path');
   const router = require('express').Router();
-  const { generatePdf } = require('../funcionalidad-pdf/generarPdf');
+  const { generarPdf, existe } = require('../funcionalidad-pdf/generarPdf');
+  const { sendEmail } = require('../funcionalidad-email/sendEmail')
 //
 
 
 //Rutas
-  router.get('/',  (req, res) => {
+  router.get('/', (req, res) => {
 
-    const document = {
+    const doc = {
 
 
       pageMargins: [ 40, 60, 40, 60 ],
       pageOrientation: 'portrait',
+      pageSize: 'A4',
       content: [
 
 
@@ -60,10 +61,22 @@
 
     };
 
-    generatePdf(document, (mensaje) => {
-    res.download(path.join(__dirname, '../funcionalidad-pdf/docs/Demanda.pdf'));
-      console.log(mensaje);
-    })
+    let nombre =  'Jonathan';
+
+    let result =  generarPdf(doc, nombre);
+
+    if (existe(result.direccion)) {
+
+      console.log(result.message);
+      sendEmail(['andresarias510@gmail.com','jonathanandresarias510@gmail.com'], 'jonathan');
+      res.download(result.direccion);
+
+    }else {
+      res.json({
+        ok: false,
+        err: 'PDF no existe'
+      });
+    }
 
   });
 
