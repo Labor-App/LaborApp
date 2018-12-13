@@ -22,7 +22,7 @@ let sendEmail = ( destinatario, nombre = null ) =>{
     subject: 'Hola desde node',
     text: text,
     attachments: {
-      filename: `Demanda.pdf-${ nombre }`,
+      filename: `Demanda.pdf-${ nombre }.pdf`,
       path: path.join(__dirname, `../funcionalidad-pdf/docs/Demanda-${ nombre }.pdf` )
     }
   };
