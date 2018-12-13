@@ -63,12 +63,12 @@
 
     let nombre =  'Jonathan';
 
-    let result =  generarPdf(doc, nombre);
+    let result = generarPdf(doc, nombre);
 
     if (existe(result.direccion)) {
 
       console.log(result.message);
-      sendEmail(['andresarias510@gmail.com','jonathanandresarias510@gmail.com'], 'jonathan');
+      sendEmail(['andresarias510@gmail.com','jonathanandresarias510@gmail.com'], nombre);
       res.download(result.direccion);
 
     }else {
