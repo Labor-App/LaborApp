@@ -6,7 +6,7 @@
 
 
 //Rutas
-  router.get('/', (req, res) => {
+  router.get('/', async (req, res) => {
 
     const doc = {
 
@@ -63,12 +63,12 @@
 
     let nombre =  'Jonathan';
 
-    let result =  generarPdf(doc, nombre);
+    let result = await generarPdf(doc, nombre);
 
     if (existe(result.direccion)) {
 
       console.log(result.message);
-      sendEmail(['andresarias510@gmail.com','jonathanandresarias510@gmail.com'], 'Jonathan');
+      sendEmail(['andresarias510@gmail.com','jonathanandresarias510@gmail.com'], nombre);
       res.download(result.direccion);
 
     }else {
