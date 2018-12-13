@@ -6,7 +6,7 @@
 
 
 //Rutas
-  router.get('/', async (req, res) => {
+  router.get('/', (req, res) => {
 
     const doc = {
 
@@ -63,7 +63,7 @@
 
     let nombre =  'Jonathan';
 
-    let result = await generarPdf(doc, nombre);
+    let result = generarPdf(doc, nombre);
 
     if (existe(result.direccion)) {
 
