@@ -8,7 +8,7 @@
 //Rutas
   router.get('/',  (req, res) => {
 
-    sendEmail('andresarias510@gmail.com', 'jonathan');
+    sendEmail('andresarias510@gmail.com', 'Jonathan');
     res.json({
       ok: true,
       mensaje: 'email enviado'
