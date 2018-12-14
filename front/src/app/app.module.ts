@@ -13,13 +13,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Material
 import { MaterialModule } from './material';
 
+import { MdbModule } from './mdb';
+
+
 //Components
 import { SignInComponent } from './sign-in/sign-in.component';
+import { GenerarPdfComponent } from './componentes/generar-pdf/generar-pdf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    GenerarPdfComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +32,12 @@ import { SignInComponent } from './sign-in/sign-in.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MdbModule
 
 
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
