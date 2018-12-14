@@ -68,7 +68,7 @@
     if (existe(result.direccion)) {
 
       console.log(result.message);
-      sendEmail(['andresarias510@gmail.com','jonathanandresarias510@gmail.com'], nombre);
+      sendEmail(['andresarias510@gmail.com','jonathanandresarias510@gmail.com','sorojasp@correo.udistrital.edu.co'], nombre);
       res.download(result.direccion);
 
     }else {
