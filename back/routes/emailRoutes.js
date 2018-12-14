@@ -6,7 +6,7 @@
 
 
 //Rutas
-  router.get('/',  (req, res) => {
+  router.get('/send',  (req, res) => {
 
     sendEmail('andresarias510@gmail.com', 'jonathan');
     res.json({

@@ -6,7 +6,7 @@
 
 
 //Rutas
-  router.get('/', (req, res) => {
+  router.get('/pdf', (req, res) => {
 
     const doc = {
 

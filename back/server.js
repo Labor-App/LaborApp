@@ -7,9 +7,7 @@
 let port = process.env.PORT || 3000;
 
 //Rutas
-  app.use('/pdf', require('./routes/pdfRoutes'));
-
-  app.use('/send', require('./routes/emailRoutes'))
+  app.use('/', require('./routes/index'));
 //
 
 
