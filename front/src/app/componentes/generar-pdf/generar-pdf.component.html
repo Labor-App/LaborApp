@@ -1,19 +1,16 @@
 <!-- Default form contact -->
-<form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<form class="text-center border-light p-5 formulario" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-  <p class="h4 mb-4">Contact us</p>
+  <p class="h4 mb-4">Generar Demanda</p>
 
   <!-- Name -->
-  <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInputDirective
-    class="form-control mb-4" placeholder="Name">
+  <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInputDirective class="form-control mb-4" placeholder="Name">
 
   <!-- Email -->
-  <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInputDirective
-    class="form-control mb-4" placeholder="E-mail">
+  <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInputDirective class="form-control mb-4" placeholder="E-mail">
 
   <!-- Send button -->
-  <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
-    mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Send</button>
+  <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Send</button>
 
 </form>
 <!-- Default form contact -->

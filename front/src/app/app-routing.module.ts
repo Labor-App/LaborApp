@@ -6,7 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { GenerarPdfComponent } from './componentes/generar-pdf/generar-pdf.component';
 const routes: Routes = [
-  {path:"", component:/* SignInComponent*/ GenerarPdfComponent}
+  // {path:"", component: SignInComponent },
+  {path:"", component: GenerarPdfComponent}
 ];
 
 @NgModule({
