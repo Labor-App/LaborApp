@@ -15,11 +15,18 @@ import { MaterialModule } from './material';
 
 //Components
 import { SignInComponent } from './sign-in/sign-in.component';
+import { GenerarPdfComponent } from './generar-pdf/generar-pdf.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    GenerarPdfComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,13 @@ import { SignInComponent } from './sign-in/sign-in.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
 
 
   ],

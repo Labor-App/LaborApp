@@ -10,7 +10,11 @@ import * as Material from '@angular/material';
     Material.MatInputModule,
     Material.MatFormFieldModule,
     Material.MatGridListModule,
-    Material.MatSnackBarModule    
+    Material.MatSnackBarModule,
+    Material.MatSidenavModule ,
+    Material.MatToolbarModule,
+    Material.MatListModule,
+    Material.MatSelectModule
 
   ],
   exports: [
@@ -19,7 +23,11 @@ import * as Material from '@angular/material';
     Material.MatInputModule,
     Material.MatFormFieldModule,
     Material.MatGridListModule,
-    Material.MatSnackBarModule
+    Material.MatSnackBarModule,
+    Material.MatSidenavModule,
+    Material.MatToolbarModule,
+    Material.MatListModule,
+    Material.MatSelectModule
 
   ],
 })

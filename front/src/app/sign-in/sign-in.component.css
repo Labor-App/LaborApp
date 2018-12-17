@@ -14,13 +14,18 @@
 	width: 15rem;
 }
 .sign-in-container form{
-	width: 100%
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 .sign-in-container form .inputs{
 	width: 100%;
 	margin-bottom: 1rem;
 }
 .sign-in-container form .link{
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	color: #1899fc;

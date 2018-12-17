@@ -1,0 +1,40 @@
+.generar-pdf-container{
+	width: 100%;
+	height: 92%;
+	margin: auto;
+	padding: 0 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.generar-pdf-container form{
+  width: 100%;
+	height: 100%;
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+}
+.generar-pdf-container .btn-ingresar{
+	background: #1899fc;
+	color: #fff;
+}
+.nombre-inputs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.full-width {
+  width: 100%;
+}
+.half-width{
+  width: 49%;
+}
