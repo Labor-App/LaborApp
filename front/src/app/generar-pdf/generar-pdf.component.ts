@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-generar-pdf',
@@ -11,5 +12,14 @@ export class GenerarPdfComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+ getErrorMessage() {
+   return this.email.hasError('required') ? 'Introduzca un email' :
+       this.email.hasError('email') ? 'Email no vaildo' :
+           '';
+ }
 
 }
