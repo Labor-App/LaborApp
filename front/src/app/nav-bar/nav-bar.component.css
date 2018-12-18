@@ -18,8 +18,9 @@
 }
 
 .nav-bar{
+  height: 8%;
   background: #1899fc;
-  height: auto;
+  /* height: auto; */
   color: #fff;
 }
 
@@ -28,7 +29,7 @@
 }
 
 .titulo{
-  padding: 0.8rem 0;
+  /* padding: 0.8rem 0; */
   font-size: 2rem;
   margin-left: 0.625rem;
 
