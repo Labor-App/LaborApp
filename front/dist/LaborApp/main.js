@@ -141,6 +141,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./nav-bar/nav-bar.component */ "./src/app/nav-bar/nav-bar.component.ts");
 /* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _generar_pdf_demanda_juridica_demanda_juridica_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./generar-pdf/demanda-juridica/demanda-juridica.component */ "./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.ts");
+/* harmony import */ var _generar_pdf_demanda_natural_demanda_natural_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./generar-pdf/demanda-natural/demanda-natural.component */ "./src/app/generar-pdf/demanda-natural/demanda-natural.component.ts");
 
 
 
@@ -158,6 +160,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -167,7 +171,9 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_8__["SignInComponent"],
                 _generar_pdf_generar_pdf_component__WEBPACK_IMPORTED_MODULE_9__["GenerarPdfComponent"],
-                _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_10__["NavBarComponent"]
+                _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_10__["NavBarComponent"],
+                _generar_pdf_demanda_juridica_demanda_juridica_component__WEBPACK_IMPORTED_MODULE_13__["DemandaJuridicaComponent"],
+                _generar_pdf_demanda_natural_demanda_natural_component__WEBPACK_IMPORTED_MODULE_14__["DemandaNaturalComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -194,6 +200,153 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\nform{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n.btn-ingresar{\r\n\tmargin-top: 1rem;\r\n\tbackground: #1899fc;\r\n\tcolor: #fff;\r\n}\r\n\r\n.nombre-inputs{\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n\r\n.half-width{\r\n  width: 49%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1qdXJpZGljYS9kZW1hbmRhLWp1cmlkaWNhLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0VBQ0UsWUFBWTtDQUNiLGFBQWE7RUFDWixjQUFjO0NBQ2YsdUJBQXVCO0NBQ3ZCLG9CQUFvQjtDQUNwQix3QkFBd0I7Q0FDeEI7O0FBRUQ7Q0FDQyxpQkFBaUI7Q0FDakIsb0JBQW9CO0NBQ3BCLFlBQVk7Q0FDWjs7QUFDRDtFQUNFLGNBQWM7RUFDZCxvQkFBb0I7RUFDcEIsK0JBQStCO0NBQ2hDOztBQUVEO0VBQ0UsWUFBWTtDQUNiOztBQUNEO0VBQ0UsV0FBVztDQUNaIiwiZmlsZSI6InNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1qdXJpZGljYS9kZW1hbmRhLWp1cmlkaWNhLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuZm9ybXtcclxuICB3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IDEwMCU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi5idG4taW5ncmVzYXJ7XHJcblx0bWFyZ2luLXRvcDogMXJlbTtcclxuXHRiYWNrZ3JvdW5kOiAjMTg5OWZjO1xyXG5cdGNvbG9yOiAjZmZmO1xyXG59XHJcbi5ub21icmUtaW5wdXRze1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbn1cclxuXHJcbi5mdWxsLXdpZHRoIHtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG4uaGFsZi13aWR0aHtcclxuICB3aWR0aDogNDklO1xyXG59XHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<form [formGroup]=\"formularioJuridica\" class=\"full-width\">\n\n\n\n  <div class=\"full-width nombre-inputs\">\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Razón Social\" formControlName=\"razonSocial\" required>\n    </mat-form-field>\n\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"NIT\" formControlName=\"nit\" required>\n    </mat-form-field>\n  </div>\n\n  <mat-form-field class=\"full-width\">\n    <input  matInput placeholder=\"Dirección\" formControlName=\"direccion\" required>\n  </mat-form-field>\n\n  <div class=\"full-width nombre-inputs\">\n\n\n    <mat-form-field class=\"half-width\">\n       <mat-select placeholder=\"Departamento\"  >\n         <mat-option value=\"option\">Option</mat-option>\n       </mat-select>\n     </mat-form-field>\n    <mat-form-field class=\"half-width\">\n        <mat-select placeholder=\"Municipio\"  >\n          <mat-option value=\"option\">Option</mat-option>\n        </mat-select>\n    </mat-form-field>\n\n\n  </div>\n\n\n  <div class=\"full-width nombre-inputs\">\n\n\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Email\" [formControl]=\"email\"  required>\n      <mat-error *ngIf=\"email.invalid\">{{getErrorMessage()}}</mat-error>\n    </mat-form-field>\n\n\n    <mat-form-field class=\"half-width\">\n\n      <input type=\"tel\" matInput placeholder=\"Telefono\" formControlName=\"telefono\" required>\n\n    </mat-form-field>\n\n\n  </div>\n\n\n  <button mat-flat-button class=\"btn-ingresar\" [disabled]=\"!formularioJuridica.valid || email.invalid\" (click)=\"log()\" >Continuar</button>\n</form>\n"
+
+/***/ }),
+
+/***/ "./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: DemandaJuridicaComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DemandaJuridicaComponent", function() { return DemandaJuridicaComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
+
+
+var DemandaJuridicaComponent = /** @class */ (function () {
+    function DemandaJuridicaComponent(formBuilder) {
+        this.formBuilder = formBuilder;
+        this.email = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]);
+        this.formularioJuridica = this.formBuilder.group({
+            'razonSocial': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'nit': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])],
+            'direccion': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'telefono': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])],
+        });
+    }
+    DemandaJuridicaComponent.prototype.log = function () {
+        console.log(this.formularioJuridica);
+    };
+    DemandaJuridicaComponent.prototype.ngOnInit = function () {
+    };
+    DemandaJuridicaComponent.prototype.getErrorMessage = function () {
+        return this.email.hasError('required') ? 'Introduzca un email' :
+            this.email.hasError('email') ? 'Email no vaildo' : '';
+    };
+    DemandaJuridicaComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-demanda-juridica',
+            template: __webpack_require__(/*! ./demanda-juridica.component.html */ "./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.html"),
+            styles: [__webpack_require__(/*! ./demanda-juridica.component.css */ "./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
+    ], DemandaJuridicaComponent);
+    return DemandaJuridicaComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/generar-pdf/demanda-natural/demanda-natural.component.css":
+/*!***************************************************************************!*\
+  !*** ./src/app/generar-pdf/demanda-natural/demanda-natural.component.css ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\nform{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n.btn-ingresar{\r\n\tmargin-top: 1rem;\r\n\tbackground: #1899fc;\r\n\tcolor: #fff;\r\n}\r\n\r\n.nombre-inputs{\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n\r\n.half-width{\r\n  width: 49%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1uYXR1cmFsL2RlbWFuZGEtbmF0dXJhbC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtFQUNFLFlBQVk7Q0FDYixhQUFhO0VBQ1osY0FBYztDQUNmLHVCQUF1QjtDQUN2QixvQkFBb0I7Q0FDcEIsd0JBQXdCO0NBQ3hCOztBQUVEO0NBQ0MsaUJBQWlCO0NBQ2pCLG9CQUFvQjtDQUNwQixZQUFZO0NBQ1o7O0FBQ0Q7RUFDRSxjQUFjO0VBQ2Qsb0JBQW9CO0VBQ3BCLCtCQUErQjtDQUNoQzs7QUFFRDtFQUNFLFlBQVk7Q0FDYjs7QUFDRDtFQUNFLFdBQVc7Q0FDWiIsImZpbGUiOiJzcmMvYXBwL2dlbmVyYXItcGRmL2RlbWFuZGEtbmF0dXJhbC9kZW1hbmRhLW5hdHVyYWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5mb3Jte1xyXG4gIHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogMTAwJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG5cdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblx0YWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuLmJ0bi1pbmdyZXNhcntcclxuXHRtYXJnaW4tdG9wOiAxcmVtO1xyXG5cdGJhY2tncm91bmQ6ICMxODk5ZmM7XHJcblx0Y29sb3I6ICNmZmY7XHJcbn1cclxuLm5vbWJyZS1pbnB1dHN7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxufVxyXG5cclxuLmZ1bGwtd2lkdGgge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcbi5oYWxmLXdpZHRoe1xyXG4gIHdpZHRoOiA0OSU7XHJcbn1cclxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/generar-pdf/demanda-natural/demanda-natural.component.html":
+/*!****************************************************************************!*\
+  !*** ./src/app/generar-pdf/demanda-natural/demanda-natural.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<form [formGroup]=\"formularioNatural\" class=\"full-width \">\n\n\n\n  <div class=\"full-width nombre-inputs\">\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Nombre\" formControlName=\"nombre\" required>\n    </mat-form-field>\n\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Apellido\" formControlName=\"apellido\" required>\n    </mat-form-field>\n  </div>\n\n  <mat-form-field class=\"full-width\">\n    <input  matInput placeholder=\"Dirección\" formControlName=\"direccion\" required>\n  </mat-form-field>\n\n  <div class=\"full-width nombre-inputs\">\n\n    <mat-form-field class=\"half-width\">\n       <mat-select placeholder=\"Departamento\">\n         <mat-option value=\"option\">Option</mat-option>\n       </mat-select>\n     </mat-form-field>\n    <mat-form-field class=\"half-width\">\n        <mat-select placeholder=\"Municipio\">\n          <mat-option value=\"option\">Option</mat-option>\n        </mat-select>\n    </mat-form-field>\n\n  </div>\n\n  <div class=\"full-width nombre-inputs\">\n\n    <mat-form-field class=\"half-width\">\n       <mat-select placeholder=\"Tipo de Documento\" #tipoDeDocumento value=\"CC\" >\n         <mat-option value=\"CC\">Cedula de Ciudadania</mat-option>\n         <mat-option value=\"CE\">Cedula de Exptranjeria</mat-option>\n         <mat-option value=\"Pasaporte\">Pasaporte</mat-option>\n         <mat-option value=\"Carnet Diplomatico\">Carnet Diplomatico</mat-option>\n       </mat-select>\n     </mat-form-field>\n    <mat-form-field class=\"half-width\">\n        <input type=\"tel\" matInput placeholder=\"{{ tipoDeDocumento.value }}\" formControlName=\"identificacion\" required>\n    </mat-form-field>\n\n  </div>\n\n\n  <div class=\"full-width nombre-inputs\">\n\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Email\" [formControl]=\"email\" required>\n      <mat-error *ngIf=\"email.invalid\">{{getErrorMessage()}}</mat-error>\n    </mat-form-field>\n\n\n    <mat-form-field class=\"half-width\">\n\n      <input type=\"tel\" matInput placeholder=\"Telefono\" formControlName=\"telefono\" required>\n\n    </mat-form-field>\n\n\n  </div>\n\n\n  <button mat-flat-button class=\"btn-ingresar\" [disabled]=\"!formularioNatural.valid || email.invalid\" (click)=\"log()\" >Continuar</button>\n</form>\n"
+
+/***/ }),
+
+/***/ "./src/app/generar-pdf/demanda-natural/demanda-natural.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/generar-pdf/demanda-natural/demanda-natural.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: DemandaNaturalComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DemandaNaturalComponent", function() { return DemandaNaturalComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
+
+
+var DemandaNaturalComponent = /** @class */ (function () {
+    function DemandaNaturalComponent(formBuilder) {
+        this.formBuilder = formBuilder;
+        this.email = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]);
+        this.formularioNatural = this.formBuilder.group({
+            'nombre': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'apellido': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'direccion': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'identificacion': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])],
+            'telefono': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])],
+        });
+    }
+    DemandaNaturalComponent.prototype.ngOnInit = function () {
+    };
+    DemandaNaturalComponent.prototype.log = function () {
+        console.log(this.formularioNatural);
+    };
+    DemandaNaturalComponent.prototype.getErrorMessage = function () {
+        return this.email.hasError('required') ? 'Introduzca un email' :
+            this.email.hasError('email') ? 'Email no vaildo' : '';
+    };
+    DemandaNaturalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-demanda-natural',
+            template: __webpack_require__(/*! ./demanda-natural.component.html */ "./src/app/generar-pdf/demanda-natural/demanda-natural.component.html"),
+            styles: [__webpack_require__(/*! ./demanda-natural.component.css */ "./src/app/generar-pdf/demanda-natural/demanda-natural.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
+    ], DemandaNaturalComponent);
+    return DemandaNaturalComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/generar-pdf/generar-pdf.component.css":
 /*!*******************************************************!*\
   !*** ./src/app/generar-pdf/generar-pdf.component.css ***!
@@ -201,7 +354,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".generar-pdf-container{\r\n\twidth: 100%;\r\n\theight: 92%;\r\n\tmargin: auto;\r\n\tpadding: 0 1.5rem;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n.generar-pdf-container form{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n.container{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n}\r\n\r\ntextarea{\r\n\tmax-height: 51px;\r\n}\r\n\r\n/* .prueba{\r\n\tborder: 2px solid #1899fc;\r\n\tborder-radius: 5%;\r\n} */\r\n\r\n.generar-pdf-container .btn-ingresar{\r\n\tbackground: #1899fc;\r\n\tcolor: #fff;\r\n}\r\n\r\n.nombre-inputs{\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n\r\n.half-width{\r\n  width: 49%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZ2VuZXJhci1wZGYuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFlBQVk7Q0FDWixZQUFZO0NBQ1osYUFBYTtDQUNiLGtCQUFrQjtDQUNsQixjQUFjO0NBQ2QsdUJBQXVCO0NBQ3ZCLG9CQUFvQjtDQUNwQix3QkFBd0I7Q0FDeEI7O0FBRUQ7RUFDRSxZQUFZO0NBQ2IsYUFBYTtFQUNaLGNBQWM7Q0FDZix1QkFBdUI7Q0FDdkIsb0JBQW9CO0NBQ3BCLHdCQUF3QjtDQUN4Qjs7QUFFRDtDQUNDLFlBQVk7Q0FDWixhQUFhO0NBQ2I7O0FBRUQ7Q0FDQyxpQkFBaUI7Q0FDakI7O0FBRUQ7OztJQUdJOztBQUdKO0NBQ0Msb0JBQW9CO0NBQ3BCLFlBQVk7Q0FDWjs7QUFDRDtFQUNFLGNBQWM7RUFDZCxvQkFBb0I7RUFDcEIsK0JBQStCO0NBQ2hDOztBQUVEO0VBQ0UsWUFBWTtDQUNiOztBQUNEO0VBQ0UsV0FBVztDQUNaIiwiZmlsZSI6InNyYy9hcHAvZ2VuZXJhci1wZGYvZ2VuZXJhci1wZGYuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5nZW5lcmFyLXBkZi1jb250YWluZXJ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiA5MiU7XHJcblx0bWFyZ2luOiBhdXRvO1xyXG5cdHBhZGRpbmc6IDAgMS41cmVtO1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcblxyXG4uZ2VuZXJhci1wZGYtY29udGFpbmVyIGZvcm17XHJcbiAgd2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiAxMDAlO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcblx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcblxyXG4uY29udGFpbmVye1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogMTAwJTtcclxufVxyXG5cclxudGV4dGFyZWF7XHJcblx0bWF4LWhlaWdodDogNTFweDtcclxufVxyXG5cclxuLyogLnBydWViYXtcclxuXHRib3JkZXI6IDJweCBzb2xpZCAjMTg5OWZjO1xyXG5cdGJvcmRlci1yYWRpdXM6IDUlO1xyXG59ICovXHJcblxyXG5cclxuLmdlbmVyYXItcGRmLWNvbnRhaW5lciAuYnRuLWluZ3Jlc2Fye1xyXG5cdGJhY2tncm91bmQ6ICMxODk5ZmM7XHJcblx0Y29sb3I6ICNmZmY7XHJcbn1cclxuLm5vbWJyZS1pbnB1dHN7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxufVxyXG5cclxuLmZ1bGwtd2lkdGgge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcbi5oYWxmLXdpZHRoe1xyXG4gIHdpZHRoOiA0OSU7XHJcbn1cclxuIl19 */"
+module.exports = ".generar-pdf-container{\r\n\twidth: 100%;\r\n\theight: 92%;\r\n\tmargin: auto;\r\n\tpadding: 0 1.5rem;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZ2VuZXJhci1wZGYuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFlBQVk7Q0FDWixZQUFZO0NBQ1osYUFBYTtDQUNiLGtCQUFrQjtDQUNsQixjQUFjO0NBQ2QsdUJBQXVCO0NBQ3ZCLG9CQUFvQjtDQUNwQix3QkFBd0I7Q0FDeEI7Ozs7QUFJRDtFQUNFLFlBQVk7Q0FDYiIsImZpbGUiOiJzcmMvYXBwL2dlbmVyYXItcGRmL2dlbmVyYXItcGRmLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZ2VuZXJhci1wZGYtY29udGFpbmVye1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogOTIlO1xyXG5cdG1hcmdpbjogYXV0bztcclxuXHRwYWRkaW5nOiAwIDEuNXJlbTtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblx0YWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuXHJcblxyXG4uZnVsbC13aWR0aCB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -212,7 +365,7 @@ module.exports = ".generar-pdf-container{\r\n\twidth: 100%;\r\n\theight: 92%;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"container\"> -->\n\n<app-nav-bar>\n\n\n  <div class=\"generar-pdf-container\">\n\n\n    <form class=\"formulario\">\n\n\n\n        <mat-form-field class=\"full-width\">\n          <mat-select  placeholder=\"Tipo de Persona\">\n            <mat-option value=\"option1\">Persona Juridica</mat-option>\n            <mat-option value=\"option2\">Persona Natural</mat-option>\n          </mat-select>\n\n        </mat-form-field>\n        <!-- <button\n        mat-icon-button\n        #tooltip=\"matTooltip\"\n        (click)=\"tooltip.toggle()\"\n\n        matTooltipPosition=\"above\"\n        matTooltip=\"Elija el tipo de persona a demandar\"\n        aria-label=\"Button that displays a tooltip when focused or hovered over\">\n        <mat-icon>info</mat-icon>\n      </button> -->\n\n\n    <!-- Persona de tipo Juridica -->\n\n      <div class=\"full-width prueba\">\n\n\n\n        <div class=\"full-width nombre-inputs\">\n          <mat-form-field class=\"half-width\">\n            <input matInput placeholder=\"Razón Social\" required>\n          </mat-form-field>\n\n          <mat-form-field class=\"half-width\">\n            <input matInput placeholder=\"NIT\" required>\n          </mat-form-field>\n        </div>\n\n        <mat-form-field class=\"full-width\">\n          <input  matInput placeholder=\"Dirección\" required>\n        </mat-form-field>\n\n        <div class=\"full-width nombre-inputs\">\n\n\n          <mat-form-field class=\"half-width\">\n             <mat-select placeholder=\"Departamento\">\n               <mat-option value=\"option\">Option</mat-option>\n             </mat-select>\n           </mat-form-field>\n          <mat-form-field class=\"half-width\">\n              <mat-select placeholder=\"Municipio\">\n                <mat-option value=\"option\">Option</mat-option>\n              </mat-select>\n          </mat-form-field>\n\n\n        </div>\n\n\n        <div class=\"full-width nombre-inputs\">\n\n\n\n          <mat-form-field class=\"half-width\">\n            <input matInput placeholder=\"Enter your email\" [formControl]=\"email\" required>\n            <mat-error *ngIf=\"email.invalid\">{{getErrorMessage()}}</mat-error>\n          </mat-form-field>\n\n\n          <mat-form-field class=\"half-width\">\n\n            <input type=\"tel\" matInput placeholder=\"Telefono\" required>\n\n          </mat-form-field>\n\n\n        </div>\n\n      </div>\n\n\n      <!-- <p class=\"full-width\">\n        <mat-form-field class=\"full-width\">\n          <textarea matInput placeholder=\"Dirección\"></textarea>\n        </mat-form-field>\n      </p> -->\n\n      <button mat-flat-button class=\"btn-ingresar\" >Ingresar</button>\n\n    </form>\n\n  </div>\n\n</app-nav-bar>\n<!-- </div> -->\n"
+module.exports = "<!-- <div class=\"container\"> -->\n\n<app-nav-bar>\n\n\n  <div class=\"generar-pdf-container\">\n\n\n    <mat-form-field class=\"full-width\">\n\n      <mat-select #seleccion placeholder=\"Tipo de Persona\" (focus)=\"log()\" [(value)]=\"opcion\">\n        <mat-option value=\"opcion1\">Persona Juridica</mat-option>\n        <mat-option value=\"opcion2\">Persona Natural</mat-option>\n      </mat-select>\n\n    </mat-form-field>\n\n\n\n    <!-- Persona de tipo Juridica -->\n\n    <app-demanda-juridica class=\"full-width\" *ngIf=\"seleccion.value == 'opcion1'\"></app-demanda-juridica>\n\n    <!-- persona de tipo Natural -->\n\n    <app-demanda-natural class=\"full-width\" *ngIf=\"seleccion.value == 'opcion2'\"></app-demanda-natural>\n\n\n  </div>\n\n</app-nav-bar>\n<!-- </div> -->\n"
 
 /***/ }),
 
@@ -228,28 +381,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GenerarPdfComponent", function() { return GenerarPdfComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-
 
 
 var GenerarPdfComponent = /** @class */ (function () {
     function GenerarPdfComponent() {
-        this.email = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]);
+        this.opcion = 'opcion1';
     }
-    GenerarPdfComponent.prototype.ngOnInit = function () {
-    };
-    GenerarPdfComponent.prototype.getErrorMessage = function () {
-        return this.email.hasError('required') ? 'Introduzca un email' :
-            this.email.hasError('email') ? 'Email no vaildo' :
-                '';
+    GenerarPdfComponent.prototype.log = function () {
+        console.log(this.opcion);
     };
     GenerarPdfComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-generar-pdf',
             template: __webpack_require__(/*! ./generar-pdf.component.html */ "./src/app/generar-pdf/generar-pdf.component.html"),
             styles: [__webpack_require__(/*! ./generar-pdf.component.css */ "./src/app/generar-pdf/generar-pdf.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        })
     ], GenerarPdfComponent);
     return GenerarPdfComponent;
 }());

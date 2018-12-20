@@ -1,0 +1,57 @@
+<form [formGroup]="formularioJuridica" class="full-width">
+
+
+
+  <div class="full-width nombre-inputs">
+    <mat-form-field class="half-width">
+      <input matInput placeholder="Razón Social" formControlName="razonSocial" required>
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+      <input matInput placeholder="NIT" formControlName="nit" required>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="full-width">
+    <input  matInput placeholder="Dirección" formControlName="direccion" required>
+  </mat-form-field>
+
+  <div class="full-width nombre-inputs">
+
+
+    <mat-form-field class="half-width">
+       <mat-select placeholder="Departamento"  >
+         <mat-option value="option">Option</mat-option>
+       </mat-select>
+     </mat-form-field>
+    <mat-form-field class="half-width">
+        <mat-select placeholder="Municipio"  >
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+  </div>
+
+
+  <div class="full-width nombre-inputs">
+
+
+    <mat-form-field class="half-width">
+      <input matInput placeholder="Email" [formControl]="email"  required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="half-width">
+
+      <input type="tel" matInput placeholder="Telefono" formControlName="telefono" required>
+
+    </mat-form-field>
+
+
+  </div>
+
+
+  <button mat-flat-button class="btn-ingresar" [disabled]="!formularioJuridica.valid || email.invalid" (click)="log()" >Continuar</button>
+</form>

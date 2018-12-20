@@ -19,6 +19,8 @@ import { GenerarPdfComponent } from './generar-pdf/generar-pdf.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { DemandaJuridicaComponent } from './generar-pdf/demanda-juridica/demanda-juridica.component';
+import { DemandaNaturalComponent } from './generar-pdf/demanda-natural/demanda-natural.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     AppComponent,
     SignInComponent,
     GenerarPdfComponent,
-    NavBarComponent
+    NavBarComponent,
+    DemandaJuridicaComponent,
+    DemandaNaturalComponent
   ],
   imports: [
     BrowserModule,

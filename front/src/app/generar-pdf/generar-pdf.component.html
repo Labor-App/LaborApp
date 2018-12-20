@@ -6,98 +6,25 @@
   <div class="generar-pdf-container">
 
 
-    <form class="formulario">
+    <mat-form-field class="full-width">
 
+      <mat-select #seleccion placeholder="Tipo de Persona" (focus)="log()" [(value)]="opcion">
+        <mat-option value="opcion1">Persona Juridica</mat-option>
+        <mat-option value="opcion2">Persona Natural</mat-option>
+      </mat-select>
 
+    </mat-form-field>
 
-        <mat-form-field class="full-width">
-          <mat-select  placeholder="Tipo de Persona">
-            <mat-option value="option1">Persona Juridica</mat-option>
-            <mat-option value="option2">Persona Natural</mat-option>
-          </mat-select>
-
-        </mat-form-field>
-        <!-- <button
-        mat-icon-button
-        #tooltip="matTooltip"
-        (click)="tooltip.toggle()"
-
-        matTooltipPosition="above"
-        matTooltip="Elija el tipo de persona a demandar"
-        aria-label="Button that displays a tooltip when focused or hovered over">
-        <mat-icon>info</mat-icon>
-      </button> -->
 
 
     <!-- Persona de tipo Juridica -->
 
-      <div class="full-width prueba">
+    <app-demanda-juridica class="full-width" *ngIf="seleccion.value == 'opcion1'"></app-demanda-juridica>
 
+    <!-- persona de tipo Natural -->
 
+    <app-demanda-natural class="full-width" *ngIf="seleccion.value == 'opcion2'"></app-demanda-natural>
 
-        <div class="full-width nombre-inputs">
-          <mat-form-field class="half-width">
-            <input matInput placeholder="Razón Social" required>
-          </mat-form-field>
-
-          <mat-form-field class="half-width">
-            <input matInput placeholder="NIT" required>
-          </mat-form-field>
-        </div>
-
-        <mat-form-field class="full-width">
-          <input  matInput placeholder="Dirección" required>
-        </mat-form-field>
-
-        <div class="full-width nombre-inputs">
-
-
-          <mat-form-field class="half-width">
-             <mat-select placeholder="Departamento">
-               <mat-option value="option">Option</mat-option>
-             </mat-select>
-           </mat-form-field>
-          <mat-form-field class="half-width">
-              <mat-select placeholder="Municipio">
-                <mat-option value="option">Option</mat-option>
-              </mat-select>
-          </mat-form-field>
-
-
-        </div>
-
-
-        <div class="full-width nombre-inputs">
-
-
-
-          <mat-form-field class="half-width">
-            <input matInput placeholder="Enter your email" [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-          </mat-form-field>
-
-
-          <mat-form-field class="half-width">
-
-            <input type="tel" matInput placeholder="Telefono" required>
-
-          </mat-form-field>
-
-
-        </div>
-
-      </div>
-
-
-      <!-- <p class="full-width">
-        <mat-form-field class="full-width">
-          <textarea matInput placeholder="Dirección"></textarea>
-        </mat-form-field>
-      </p> -->
-
-      <button mat-flat-button class="btn-ingresar" >Ingresar</button>
-
-    </form>
 
   </div>
 

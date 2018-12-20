@@ -1,25 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { Component } from '@angular/core';
+import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-generar-pdf',
   templateUrl: './generar-pdf.component.html',
   styleUrls: ['./generar-pdf.component.css']
 })
-export class GenerarPdfComponent implements OnInit {
+export class GenerarPdfComponent {
 
-  constructor() { }
+  opcion:String = 'opcion1';
 
-  ngOnInit() {
+
+
+
+  log(){
+
+    console.log(this.opcion);
+
+
+
   }
 
 
-  email = new FormControl('', [Validators.required, Validators.email]);
 
- getErrorMessage() {
-   return this.email.hasError('required') ? 'Introduzca un email' :
-       this.email.hasError('email') ? 'Email no vaildo' :
-           '';
- }
+
+
 
 }
