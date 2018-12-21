@@ -71,12 +71,13 @@
       sendEmail(['andresarias510@gmail.com','jonathanandresarias510@gmail.com'], nombre);
       res.download(result.direccion);
 
-    }else {
-      res.json({
-        ok: false,
-        err: 'PDF no existe'
-      });
     }
+    // else {
+    //   res.json({
+    //     ok: false,
+    //     err: 'PDF no existe'
+    //   });
+    // }
 
   });
 
