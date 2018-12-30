@@ -15,10 +15,10 @@ import * as Material from '@angular/material';
     Material.MatToolbarModule,
     Material.MatListModule,
     Material.MatSelectModule,
-    Material.MatTooltipModule
-
+    Material.MatTooltipModule,
+    Material.MatCardModule
   ],
-  exports: [
+  exports:[
     Material.MatButtonModule,
     Material.MatIconModule,
     Material.MatInputModule,
@@ -29,8 +29,8 @@ import * as Material from '@angular/material';
     Material.MatToolbarModule,
     Material.MatListModule,
     Material.MatSelectModule,
-    Material.MatTooltipModule
-
+    Material.MatTooltipModule,
+    Material.MatCardModule
   ],
 })
 export class MaterialModule{}

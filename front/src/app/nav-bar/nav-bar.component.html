@@ -1,12 +1,12 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>LaborApp</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Generar Demanda</a>
+      <a mat-list-item href="#">Contactar Abogado</a>
       <a mat-list-item routerLink="">Salir</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -21,6 +21,8 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon" class="boton">menu</mat-icon>
       </button>
+
+      <button mat-button (click)="log()" type="button" name="button">ffdfd</button>
       <span class="titulo">LaborApp</span>
     </mat-toolbar>
     <!-- Add Content Here -->

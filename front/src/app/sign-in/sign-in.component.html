@@ -6,35 +6,38 @@
     </div>
 
 
-    <form >
+      <form >
 
-      <!-- <h3 class="mat-subheading-2">Inicio de secion:</h3> -->
+        <!-- <h3 class="mat-subheading-2">Inicio de secion:</h3> -->
+        <h5 class="parrafo">Por favor, inicie sesión con su cuenta</h5>
+        <mat-card class="card">
+        <mat-form-field class="inputs">
+          <input matInput placeholder="Correo" [formControl]="emailFormControl"
+          [errorStateMatcher]="matcher" required>
+          <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Correo Invalido!
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            El correo es <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
 
-      <mat-form-field class="inputs">
-        <input matInput placeholder="Correo" [formControl]="emailFormControl"
-        [errorStateMatcher]="matcher">
-        <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
-        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-          Correo Invalido!
-        </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-          El correo es <strong>requerido</strong>
-        </mat-error>
-      </mat-form-field>
+        <mat-form-field class="inputs">
+          <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" required>
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
 
-      <mat-form-field class="inputs">
-        <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
-        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </mat-form-field>
+        <div class="link">
+          <a mat-button routerLink=".">Olvidé mi contraseña</a>
 
-      <div class="link">
-        <a mat-button routerLink=".">Olvidé mi contraseña</a>
-
-        <a mat-button routerLink=".">Crear cuenta</a>
-      </div>
+          <a mat-button routerLink=".">Crear cuenta</a>
+        </div>
+      </mat-card>
 
 
-    <button mat-flat-button (click)="openSnackBar()" class="btn-ingresar" routerLink="/pdf">Ingresar</button>
-  </form>
+        <button mat-flat-button (click)="openSnackBar()" class="btn-ingresar" routerLink="/pdf">Entrar</button>
+      </form>
+
 
 </div>

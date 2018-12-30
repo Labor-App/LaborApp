@@ -17,4 +17,9 @@ export class NavBarComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+
+
+  log(){
+    console.log(this.isHandset$)
+  }
 }

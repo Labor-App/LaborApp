@@ -21,7 +21,7 @@ export class SignInComponent implements OnInit {
   }
   //MatSnackBar
   openSnackBar() {
-    this.snackBar.open('Credenciales incorrectaas', '', {
+    this.snackBar.open('Credenciales incorrectas', '', {
       duration: 2500,
     });
   }
