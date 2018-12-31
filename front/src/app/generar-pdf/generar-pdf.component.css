@@ -2,7 +2,7 @@
 	width: 100%;
 	height: auto;
 	margin: auto;
-	margin-top: 2rem;
+	
 	padding: 0 1.5rem;
 	display: flex;
 	flex-direction: column;
@@ -12,4 +12,12 @@
 
 .tooltip{
 	margin-left: 1rem;
+}
+
+.titulo{
+	color: #2196f3;
+	font-size: 2rem;
+	font-weight: normal;
+	line-height: 110%;
+	margin-top: 1rem;
 }
