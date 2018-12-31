@@ -10,7 +10,9 @@
 
         <!-- <h3 class="mat-subheading-2">Inicio de secion:</h3> -->
         <h5 class="parrafo">Por favor, inicie sesión con su cuenta</h5>
+
         <mat-card class="card">
+
         <mat-form-field class="inputs">
           <input matInput placeholder="Correo" [formControl]="emailFormControl"
           [errorStateMatcher]="matcher" required>
@@ -33,10 +35,11 @@
 
           <a mat-button routerLink=".">Crear cuenta</a>
         </div>
+
       </mat-card>
 
 
-        <button mat-flat-button (click)="openSnackBar()" class="btn-ingresar" routerLink="/pdf">Entrar</button>
+        <button mat-flat-button (click)="openSnackBar()" class="btn" routerLink="/pdf">Entrar</button>
       </form>
 
 

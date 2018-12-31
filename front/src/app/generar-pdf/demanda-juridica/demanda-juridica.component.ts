@@ -10,6 +10,11 @@ export class DemandaJuridicaComponent implements OnInit {
 
   formularioJuridica:FormGroup;
 
+  formularioRepresentante:FormGroup;
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  emailRepresentante: FormControl;
 
   constructor(private formBuilder: FormBuilder) {
 
@@ -24,16 +29,32 @@ export class DemandaJuridicaComponent implements OnInit {
 
   }
 
+  eventoHijoFormulario(e){
+    this.formularioRepresentante = e;
+  }
+
+  eventoHijoEmail(e){
+    this.emailRepresentante = e;
+  }
 
   log(){
-    console.log(this.formularioJuridica);
+    console.log(this.formularioJuridica.get('razonSocial').valid)
+  }
+
+  verificar( cheked ){
+    if( cheked && (!this.formularioJuridica.valid || !this.formularioRepresentante.valid || this.email.invalid || this.emailRepresentante.invalid)){
+      return true;
+    }else if( !this.formularioJuridica.valid || this.email.invalid ){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 
   ngOnInit() {
   }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
 
  getErrorMessage() {
    return this.email.hasError('required') ? 'Introduzca un email' :

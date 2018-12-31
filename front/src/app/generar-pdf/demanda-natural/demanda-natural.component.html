@@ -48,7 +48,7 @@
   </div>
 
 
-  <div class="full-width nombre-inputs">
+  <div class="full-width nombre-inputs mb-1">
 
     <mat-form-field class="half-width">
       <input matInput placeholder="Email" [formControl]="email" required>
@@ -66,5 +66,5 @@
   </div>
 
 
-  <button mat-flat-button class="btn-ingresar" [disabled]="!formularioNatural.valid || email.invalid" (click)="log()" >Continuar</button>
+  <button mat-flat-button class="btn" [disabled]="!formularioNatural.valid || email.invalid" (click)="log()" >Continuar</button>
 </form>

@@ -1,18 +1,25 @@
 <form [formGroup]="formularioJuridica" class="full-width">
 
-
-
-
-  <mat-card>
-    
-
     <div class="full-width nombre-inputs">
       <mat-form-field class="half-width">
         <input matInput placeholder="Razón Social" formControlName="razonSocial" required>
+        <mat-icon
+          class="tooltip"
+          matSuffix
+          matTooltip="Nombre de la empresa">
+          help
+        </mat-icon>
       </mat-form-field>
 
       <mat-form-field class="half-width">
         <input matInput placeholder="NIT" formControlName="nit" required>
+
+      <mat-icon
+        class="tooltip"
+        matSuffix
+        matTooltip="Número de Identificacion Tributario">
+        help
+      </mat-icon>
       </mat-form-field>
     </div>
 
@@ -38,11 +45,11 @@
     </div>
 
 
-    <div class="full-width nombre-inputs">
+    <div class="full-width nombre-inputs mb-1">
 
 
       <mat-form-field class="half-width">
-        <input matInput placeholder="Email" [formControl]="email"  required>
+        <input matInput placeholder="Email" [formControl]="email" required>
         <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
 
@@ -56,8 +63,30 @@
 
     </div>
 
+    <div class="full-width mb-1">
 
-  </mat-card>
+      <mat-checkbox #representante >
+        Sabe usted los datos del representante legal
+      </mat-checkbox>
 
-  <button mat-flat-button class="btn-ingresar" [disabled]="!formularioJuridica.valid || email.invalid" (click)="log()" >Continuar</button>
+    </div>
+
+
+    <!-- Representante legal -->
+
+    <app-representante
+      *ngIf="representante.checked"
+      (representanteFormulario)="eventoHijoFormulario($event)"
+      (representanteEmail)="eventoHijoEmail($event)"
+      class="full-width">
+    </app-representante>
+
+
+
+  <button mat-flat-button class="btn"
+
+    (click)="log()"
+    [disabled]="verificar(representante.checked)"
+
+  >Continuar</button>
 </form>

@@ -8,20 +8,18 @@ form{
 	justify-content: center;
 }
 
-.btn-ingresar{
-	margin-top: 1rem;
-	background: #1899fc;
-	color: #fff;
-}
+
 .nombre-inputs{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.full-width {
-  width: 100%;
-}
+
 .half-width{
   width: 49%;
+}
+
+.mb-1{
+	margin-bottom: 1rem;
 }

@@ -1,7 +1,8 @@
 .generar-pdf-container{
 	width: 100%;
-	height: 92%;
+	height: auto;
 	margin: auto;
+	margin-top: 2rem;
 	padding: 0 1.5rem;
 	display: flex;
 	flex-direction: column;
@@ -9,8 +10,6 @@
 	justify-content: center;
 }
 
-
-
-.full-width {
-  width: 100%;
+.tooltip{
+	margin-left: 1rem;
 }

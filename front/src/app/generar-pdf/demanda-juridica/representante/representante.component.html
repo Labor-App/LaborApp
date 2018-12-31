@@ -1,0 +1,34 @@
+<div [formGroup]="formularioRepresentante" class="full-width representante mb-1">
+
+  <div class="full-width nombre-inputs">
+    <mat-form-field class="half-width">
+      <input matInput placeholder="Nombre"  formControlName="nombre" required>
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+      <input matInput placeholder="Apellido" formControlName="apellido" required>
+    </mat-form-field>
+  </div>
+
+  <div class="full-width nombre-inputs">
+
+    <mat-form-field class="half-width">
+      <mat-select placeholder="Tipo de Documento" #tipoDeDocumento value="CC" >
+        <mat-option value="CC">Cedula de Ciudadania</mat-option>
+        <mat-option value="CE">Cedula de Exptranjeria</mat-option>
+        <mat-option value="Pasaporte">Pasaporte</mat-option>
+        <mat-option value="Carnet Diplomatico">Carnet Diplomatico</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="half-width">
+      <input type="tel" matInput placeholder="{{ tipoDeDocumento.value }}" formControlName="identificacion" required>
+    </mat-form-field>
+
+  </div>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Email" [formControl]="email"  required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+
+</div>

@@ -21,5 +21,6 @@ export class NavBarComponent {
 
   log(){
     console.log(this.isHandset$)
+    console.log(this.breakpointObserver)
   }
 }

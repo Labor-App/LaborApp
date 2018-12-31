@@ -16,7 +16,9 @@ import * as Material from '@angular/material';
     Material.MatListModule,
     Material.MatSelectModule,
     Material.MatTooltipModule,
-    Material.MatCardModule
+    Material.MatCardModule,
+    Material.MatSlideToggleModule,
+    Material.MatCheckboxModule
   ],
   exports:[
     Material.MatButtonModule,
@@ -30,7 +32,9 @@ import * as Material from '@angular/material';
     Material.MatListModule,
     Material.MatSelectModule,
     Material.MatTooltipModule,
-    Material.MatCardModule
+    Material.MatCardModule,
+    Material.MatSlideToggleModule,
+    Material.MatCheckboxModule
   ],
 })
 export class MaterialModule{}
