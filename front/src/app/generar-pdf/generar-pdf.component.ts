@@ -11,19 +11,4 @@ export class GenerarPdfComponent {
   opcion:String = 'opcion1';
 
 
-
-
-  log(){
-
-    console.log(this.opcion);
-
-
-
-  }
-
-
-
-
-
-
 }

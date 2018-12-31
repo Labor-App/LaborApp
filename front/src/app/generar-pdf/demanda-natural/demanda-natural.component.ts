@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-demanda-natural',
@@ -13,11 +13,19 @@ export class DemandaNaturalComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
 
     this.formularioNatural = this.formBuilder.group({
-      'nombre': [null, Validators.required],
-      'apellido': [null, Validators.required],
-      'direccion': [null, Validators.required],
-      'identificacion': [null, Validators.compose([Validators.required, Validators.pattern(/^[0-9]+$/)])],
-      'telefono': [null, Validators.compose([Validators.required, Validators.pattern(/^[0-9]+$/)])],
+      'nombre':         [null, Validators.required],
+      'apellido':       [null, Validators.required],
+      'telefono':       [null, Validators.compose([Validators.required, Validators.pattern(/^[0-9]+$/)])],
+      'email':          [null, Validators.compose([Validators.required, Validators.email])],
+      'documento':      this.formBuilder.group({
+        'tipoDeDocumento':   ['CC'],
+        'numeroDeDocumento': [null, Validators.compose([Validators.required, Validators.pattern(/^[0-9]+$/)])]
+      }),
+      'ubicacion':      this.formBuilder.group({
+        'direccion':      [null, Validators.required],
+        'departamento':   [null, Validators.required],
+        'municipio':      [null, Validators.required]
+      })
 
     });
 
@@ -28,14 +36,12 @@ export class DemandaNaturalComponent implements OnInit {
 
 
   log(){
-    console.log(this.formularioNatural);
+    console.log(this.formularioNatural.value);
   }
 
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-
  getErrorMessage() {
-   return this.email.hasError('required') ? 'Introduzca un email' :
-          this.email.hasError('email') ? 'Email no vaildo' : '';
+   return this.formularioNatural.get('email').hasError('required') ? 'Introduzca un email' :
+          this.formularioNatural.get('email').hasError('email') ? 'Email no vaildo' : '';
  }
 }
