@@ -71,7 +71,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -143,6 +143,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _generar_pdf_demanda_juridica_demanda_juridica_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./generar-pdf/demanda-juridica/demanda-juridica.component */ "./src/app/generar-pdf/demanda-juridica/demanda-juridica.component.ts");
 /* harmony import */ var _generar_pdf_demanda_natural_demanda_natural_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./generar-pdf/demanda-natural/demanda-natural.component */ "./src/app/generar-pdf/demanda-natural/demanda-natural.component.ts");
+/* harmony import */ var _generar_pdf_demanda_juridica_representante_representante_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./generar-pdf/demanda-juridica/representante/representante.component */ "./src/app/generar-pdf/demanda-juridica/representante/representante.component.ts");
 
 
 
@@ -162,6 +163,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -173,7 +175,8 @@ var AppModule = /** @class */ (function () {
                 _generar_pdf_generar_pdf_component__WEBPACK_IMPORTED_MODULE_9__["GenerarPdfComponent"],
                 _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_10__["NavBarComponent"],
                 _generar_pdf_demanda_juridica_demanda_juridica_component__WEBPACK_IMPORTED_MODULE_13__["DemandaJuridicaComponent"],
-                _generar_pdf_demanda_natural_demanda_natural_component__WEBPACK_IMPORTED_MODULE_14__["DemandaNaturalComponent"]
+                _generar_pdf_demanda_natural_demanda_natural_component__WEBPACK_IMPORTED_MODULE_14__["DemandaNaturalComponent"],
+                _generar_pdf_demanda_juridica_representante_representante_component__WEBPACK_IMPORTED_MODULE_15__["RepresentanteComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -207,7 +210,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\nform{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n.btn-ingresar{\r\n\tmargin-top: 1rem;\r\n\tbackground: #1899fc;\r\n\tcolor: #fff;\r\n}\r\n\r\n.nombre-inputs{\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n\r\n.half-width{\r\n  width: 49%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1qdXJpZGljYS9kZW1hbmRhLWp1cmlkaWNhLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0VBQ0UsWUFBWTtDQUNiLGFBQWE7RUFDWixjQUFjO0NBQ2YsdUJBQXVCO0NBQ3ZCLG9CQUFvQjtDQUNwQix3QkFBd0I7Q0FDeEI7O0FBRUQ7Q0FDQyxpQkFBaUI7Q0FDakIsb0JBQW9CO0NBQ3BCLFlBQVk7Q0FDWjs7QUFDRDtFQUNFLGNBQWM7RUFDZCxvQkFBb0I7RUFDcEIsK0JBQStCO0NBQ2hDOztBQUVEO0VBQ0UsWUFBWTtDQUNiOztBQUNEO0VBQ0UsV0FBVztDQUNaIiwiZmlsZSI6InNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1qdXJpZGljYS9kZW1hbmRhLWp1cmlkaWNhLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuZm9ybXtcclxuICB3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IDEwMCU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi5idG4taW5ncmVzYXJ7XHJcblx0bWFyZ2luLXRvcDogMXJlbTtcclxuXHRiYWNrZ3JvdW5kOiAjMTg5OWZjO1xyXG5cdGNvbG9yOiAjZmZmO1xyXG59XHJcbi5ub21icmUtaW5wdXRze1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbn1cclxuXHJcbi5mdWxsLXdpZHRoIHtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG4uaGFsZi13aWR0aHtcclxuICB3aWR0aDogNDklO1xyXG59XHJcbiJdfQ== */"
+module.exports = "\r\nform{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n\r\n.nombre-inputs{\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n}\r\n\r\n\r\n.half-width{\r\n  width: 49%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1qdXJpZGljYS9kZW1hbmRhLWp1cmlkaWNhLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0VBQ0UsWUFBWTtDQUNiLGFBQWE7RUFDWixjQUFjO0NBQ2YsdUJBQXVCO0NBQ3ZCLG9CQUFvQjtDQUNwQix3QkFBd0I7Q0FDeEI7OztBQUdEO0VBQ0UsY0FBYztFQUNkLG9CQUFvQjtFQUNwQiwrQkFBK0I7Q0FDaEM7OztBQUVEO0VBQ0UsV0FBVztDQUNaIiwiZmlsZSI6InNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1qdXJpZGljYS9kZW1hbmRhLWp1cmlkaWNhLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuZm9ybXtcclxuICB3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IDEwMCU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcblxyXG4ubm9tYnJlLWlucHV0c3tcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG59XHJcblxyXG4uaGFsZi13aWR0aHtcclxuICB3aWR0aDogNDklO1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -218,7 +221,7 @@ module.exports = "\r\nform{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: f
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"formularioJuridica\" class=\"full-width\">\n\n\n\n  <div class=\"full-width nombre-inputs\">\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Razón Social\" formControlName=\"razonSocial\" required>\n    </mat-form-field>\n\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"NIT\" formControlName=\"nit\" required>\n    </mat-form-field>\n  </div>\n\n  <mat-form-field class=\"full-width\">\n    <input  matInput placeholder=\"Dirección\" formControlName=\"direccion\" required>\n  </mat-form-field>\n\n  <div class=\"full-width nombre-inputs\">\n\n\n    <mat-form-field class=\"half-width\">\n       <mat-select placeholder=\"Departamento\"  >\n         <mat-option value=\"option\">Option</mat-option>\n       </mat-select>\n     </mat-form-field>\n    <mat-form-field class=\"half-width\">\n        <mat-select placeholder=\"Municipio\"  >\n          <mat-option value=\"option\">Option</mat-option>\n        </mat-select>\n    </mat-form-field>\n\n\n  </div>\n\n\n  <div class=\"full-width nombre-inputs\">\n\n\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Email\" [formControl]=\"email\"  required>\n      <mat-error *ngIf=\"email.invalid\">{{getErrorMessage()}}</mat-error>\n    </mat-form-field>\n\n\n    <mat-form-field class=\"half-width\">\n\n      <input type=\"tel\" matInput placeholder=\"Telefono\" formControlName=\"telefono\" required>\n\n    </mat-form-field>\n\n\n  </div>\n\n\n  <button mat-flat-button class=\"btn-ingresar\" [disabled]=\"!formularioJuridica.valid || email.invalid\" (click)=\"log()\" >Continuar</button>\n</form>\n"
+module.exports = "<form [formGroup]=\"formularioJuridica\" class=\"full-width\" (ngSubmit)=\"log(representante.checked)\">\n\n    <div class=\"full-width nombre-inputs\">\n      <mat-form-field class=\"half-width\">\n        <input matInput placeholder=\"Razón Social\" formControlName=\"razonSocial\" required>\n        <mat-icon\n          class=\"tooltip\"\n          matSuffix\n          matTooltip=\"Nombre de la empresa\">\n          help\n        </mat-icon>\n      </mat-form-field>\n\n      <mat-form-field class=\"half-width\">\n        <input matInput placeholder=\"NIT\" formControlName=\"nit\" required>\n\n      <mat-icon\n        class=\"tooltip\"\n        matSuffix\n        matTooltip=\"Número de Identificacion Tributario\">\n        help\n      </mat-icon>\n      </mat-form-field>\n    </div>\n\n\n    <div class=\"full-width\" formGroupName=\"ubicacion\">\n\n\n      <mat-form-field class=\"full-width\">\n        <input  matInput placeholder=\"Dirección\" formControlName=\"direccion\" required>\n      </mat-form-field>\n\n      <div class=\"full-width nombre-inputs\">\n\n\n        <mat-form-field class=\"half-width\">\n          <mat-select placeholder=\"Departamento\" formControlName=\"departamento\" required>\n            <mat-option value=\"option\">Option</mat-option>\n          </mat-select>\n        </mat-form-field>\n        <mat-form-field class=\"half-width\">\n          <mat-select placeholder=\"Municipio\" formControlName=\"municipio\" required>\n            <mat-option value=\"option\">Option</mat-option>\n          </mat-select>\n        </mat-form-field>\n\n\n      </div>\n\n    </div>\n\n\n    <div class=\"full-width nombre-inputs mb-1\">\n\n\n      <mat-form-field class=\"half-width\">\n        <input matInput placeholder=\"Email\" formControlName=\"email\" required>\n        <mat-error *ngIf=\"formularioJuridica.get('email').invalid\">{{getErrorMessage()}}</mat-error>\n      </mat-form-field>\n\n\n      <mat-form-field class=\"half-width\">\n\n        <input type=\"tel\" matInput placeholder=\"Telefono\" formControlName=\"telefono\" required>\n\n      </mat-form-field>\n\n\n    </div>\n\n    <div class=\"full-width mb-1\">\n\n      <mat-checkbox #representante >\n        Sabe usted los datos del representante legal\n      </mat-checkbox>\n\n    </div>\n\n\n    <!-- Representante legal -->\n\n    <app-representante\n      *ngIf=\"representante.checked\"\n      (representanteFormulario)=\"eventoHijoFormulario($event)\"\n      class=\"full-width\">\n    </app-representante>\n\n\n\n  <button mat-flat-button class=\"btn\"\n\n    type=\"submit\"\n    [disabled]=\"verificar(representante.checked)\"\n\n  >Continuar</button>\n</form>\n"
 
 /***/ }),
 
@@ -241,22 +244,47 @@ __webpack_require__.r(__webpack_exports__);
 var DemandaJuridicaComponent = /** @class */ (function () {
     function DemandaJuridicaComponent(formBuilder) {
         this.formBuilder = formBuilder;
-        this.email = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]);
+        this.formularioRepresentante = null;
         this.formularioJuridica = this.formBuilder.group({
             'razonSocial': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             'nit': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])],
-            'direccion': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             'telefono': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])],
+            'email': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email])],
+            'ubicacion': this.formBuilder.group({
+                'direccion': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+                'departamento': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+                'municipio': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+            })
         });
     }
-    DemandaJuridicaComponent.prototype.log = function () {
-        console.log(this.formularioJuridica);
+    DemandaJuridicaComponent.prototype.eventoHijoFormulario = function (e) {
+        this.formularioRepresentante = e;
+    };
+    DemandaJuridicaComponent.prototype.log = function (checked) {
+        if (checked) {
+            console.log(this.formularioJuridica.value);
+            console.log(this.formularioRepresentante.value);
+        }
+        else {
+            console.log(this.formularioJuridica.value);
+        }
+    };
+    DemandaJuridicaComponent.prototype.verificar = function (cheked) {
+        if (cheked && (!this.formularioJuridica.valid || !this.formularioRepresentante.valid)) {
+            return true;
+        }
+        else if (!this.formularioJuridica.valid) {
+            return true;
+        }
+        else {
+            return false;
+        }
     };
     DemandaJuridicaComponent.prototype.ngOnInit = function () {
     };
     DemandaJuridicaComponent.prototype.getErrorMessage = function () {
-        return this.email.hasError('required') ? 'Introduzca un email' :
-            this.email.hasError('email') ? 'Email no vaildo' : '';
+        return this.formularioJuridica.get('email').hasError('required') ? 'Introduzca un email' :
+            this.formularioJuridica.get('email').hasError('email') ? 'Email no vaildo' : '';
     };
     DemandaJuridicaComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -273,6 +301,87 @@ var DemandaJuridicaComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/generar-pdf/demanda-juridica/representante/representante.component.css":
+/*!****************************************************************************************!*\
+  !*** ./src/app/generar-pdf/demanda-juridica/representante/representante.component.css ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".representante{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n.nombre-inputs{\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n}\r\n\r\n.half-width{\r\n  width: 49%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1qdXJpZGljYS9yZXByZXNlbnRhbnRlL3JlcHJlc2VudGFudGUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7Q0FDYixhQUFhO0VBQ1osY0FBYztDQUNmLHVCQUF1QjtDQUN2QixvQkFBb0I7Q0FDcEIsd0JBQXdCO0NBQ3hCOztBQUVEO0VBQ0UsY0FBYztFQUNkLG9CQUFvQjtFQUNwQiwrQkFBK0I7Q0FDaEM7O0FBRUQ7RUFDRSxXQUFXO0NBQ1oiLCJmaWxlIjoic3JjL2FwcC9nZW5lcmFyLXBkZi9kZW1hbmRhLWp1cmlkaWNhL3JlcHJlc2VudGFudGUvcmVwcmVzZW50YW50ZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnJlcHJlc2VudGFudGV7XHJcbiAgd2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiAxMDAlO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcblx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcblxyXG4ubm9tYnJlLWlucHV0c3tcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG59XHJcblxyXG4uaGFsZi13aWR0aHtcclxuICB3aWR0aDogNDklO1xyXG59XHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/generar-pdf/demanda-juridica/representante/representante.component.html":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/generar-pdf/demanda-juridica/representante/representante.component.html ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div [formGroup]=\"formularioRepresentante\" class=\"full-width representante mb-1\">\n\n  <div class=\"full-width nombre-inputs\">\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Nombre\"  formControlName=\"nombre\" required>\n    </mat-form-field>\n\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Apellido\" formControlName=\"apellido\" required>\n    </mat-form-field>\n  </div>\n\n  <div formGroupName=\"documento\" class=\"full-width nombre-inputs\">\n\n    <mat-form-field class=\"half-width\">\n      <mat-select placeholder=\"Tipo de Documento\" #tipoDeDocumento  formControlName=\"tipoDeDocumento\" >\n        <mat-option #opcionCC value=\"CC\">Cedula de Ciudadania</mat-option>\n        <mat-option value=\"CE\">Cedula de Exptranjeria</mat-option>\n        <mat-option value=\"Pasaporte\">Pasaporte</mat-option>\n        <mat-option value=\"Carnet Diplomatico\">Carnet Diplomatico</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field class=\"half-width\">\n      <input type=\"tel\" matInput placeholder=\"{{ tipoDeDocumento.value || opcionCC.value }}\" formControlName=\"numeroDeDocumento\" required>\n    </mat-form-field>\n\n  </div>\n\n\n  <mat-form-field class=\"full-width\">\n    <input matInput placeholder=\"Email\" formControlName=\"email\"  required>\n    <mat-error *ngIf=\"formularioRepresentante.get('email').invalid\">{{getErrorMessage()}}</mat-error>\n  </mat-form-field>\n\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/generar-pdf/demanda-juridica/representante/representante.component.ts":
+/*!***************************************************************************************!*\
+  !*** ./src/app/generar-pdf/demanda-juridica/representante/representante.component.ts ***!
+  \***************************************************************************************/
+/*! exports provided: RepresentanteComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RepresentanteComponent", function() { return RepresentanteComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
+
+
+var RepresentanteComponent = /** @class */ (function () {
+    function RepresentanteComponent(formBuilder) {
+        this.formBuilder = formBuilder;
+        this.representanteFormulario = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.formularioRepresentante = formBuilder.group({
+            'nombre': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'apellido': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            'email': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email])],
+            'documento': this.formBuilder.group({
+                'tipoDeDocumento': ['CC'],
+                'numeroDeDocumento': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])]
+            })
+        });
+    }
+    RepresentanteComponent.prototype.ngOnInit = function () {
+        this.representanteFormulario.emit(this.formularioRepresentante);
+    };
+    RepresentanteComponent.prototype.ngAfterContentChecked = function () {
+        this.representanteFormulario.emit(this.formularioRepresentante);
+    };
+    RepresentanteComponent.prototype.getErrorMessage = function () {
+        return this.formularioRepresentante.get('email').hasError('required') ? 'Introduzca un email' :
+            this.formularioRepresentante.get('email').hasError('email') ? 'Email no vaildo' : '';
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], RepresentanteComponent.prototype, "representanteFormulario", void 0);
+    RepresentanteComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-representante',
+            template: __webpack_require__(/*! ./representante.component.html */ "./src/app/generar-pdf/demanda-juridica/representante/representante.component.html"),
+            styles: [__webpack_require__(/*! ./representante.component.css */ "./src/app/generar-pdf/demanda-juridica/representante/representante.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
+    ], RepresentanteComponent);
+    return RepresentanteComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/generar-pdf/demanda-natural/demanda-natural.component.css":
 /*!***************************************************************************!*\
   !*** ./src/app/generar-pdf/demanda-natural/demanda-natural.component.css ***!
@@ -280,7 +389,7 @@ var DemandaJuridicaComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\nform{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n.btn-ingresar{\r\n\tmargin-top: 1rem;\r\n\tbackground: #1899fc;\r\n\tcolor: #fff;\r\n}\r\n\r\n.nombre-inputs{\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n\r\n.half-width{\r\n  width: 49%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1uYXR1cmFsL2RlbWFuZGEtbmF0dXJhbC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtFQUNFLFlBQVk7Q0FDYixhQUFhO0VBQ1osY0FBYztDQUNmLHVCQUF1QjtDQUN2QixvQkFBb0I7Q0FDcEIsd0JBQXdCO0NBQ3hCOztBQUVEO0NBQ0MsaUJBQWlCO0NBQ2pCLG9CQUFvQjtDQUNwQixZQUFZO0NBQ1o7O0FBQ0Q7RUFDRSxjQUFjO0VBQ2Qsb0JBQW9CO0VBQ3BCLCtCQUErQjtDQUNoQzs7QUFFRDtFQUNFLFlBQVk7Q0FDYjs7QUFDRDtFQUNFLFdBQVc7Q0FDWiIsImZpbGUiOiJzcmMvYXBwL2dlbmVyYXItcGRmL2RlbWFuZGEtbmF0dXJhbC9kZW1hbmRhLW5hdHVyYWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5mb3Jte1xyXG4gIHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogMTAwJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG5cdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblx0YWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuLmJ0bi1pbmdyZXNhcntcclxuXHRtYXJnaW4tdG9wOiAxcmVtO1xyXG5cdGJhY2tncm91bmQ6ICMxODk5ZmM7XHJcblx0Y29sb3I6ICNmZmY7XHJcbn1cclxuLm5vbWJyZS1pbnB1dHN7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxufVxyXG5cclxuLmZ1bGwtd2lkdGgge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcbi5oYWxmLXdpZHRoe1xyXG4gIHdpZHRoOiA0OSU7XHJcbn1cclxuIl19 */"
+module.exports = "\r\nform{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n\r\n.nombre-inputs{\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n}\r\n\r\n\r\n.half-width{\r\n  width: 49%;\r\n}\r\n\r\n\r\n.mb-1{\r\n\tmargin-bottom: 1rem;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZGVtYW5kYS1uYXR1cmFsL2RlbWFuZGEtbmF0dXJhbC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtFQUNFLFlBQVk7Q0FDYixhQUFhO0VBQ1osY0FBYztDQUNmLHVCQUF1QjtDQUN2QixvQkFBb0I7Q0FDcEIsd0JBQXdCO0NBQ3hCOzs7QUFHRDtFQUNFLGNBQWM7RUFDZCxvQkFBb0I7RUFDcEIsK0JBQStCO0NBQ2hDOzs7QUFHRDtFQUNFLFdBQVc7Q0FDWjs7O0FBRUQ7Q0FDQyxvQkFBb0I7Q0FDcEIiLCJmaWxlIjoic3JjL2FwcC9nZW5lcmFyLXBkZi9kZW1hbmRhLW5hdHVyYWwvZGVtYW5kYS1uYXR1cmFsLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuZm9ybXtcclxuICB3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IDEwMCU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcblxyXG4ubm9tYnJlLWlucHV0c3tcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG59XHJcblxyXG5cclxuLmhhbGYtd2lkdGh7XHJcbiAgd2lkdGg6IDQ5JTtcclxufVxyXG5cclxuLm1iLTF7XHJcblx0bWFyZ2luLWJvdHRvbTogMXJlbTtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -291,7 +400,7 @@ module.exports = "\r\nform{\r\n  width: 100%;\r\n\theight: 100%;\r\n  display: f
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"formularioNatural\" class=\"full-width \">\n\n\n\n  <div class=\"full-width nombre-inputs\">\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Nombre\" formControlName=\"nombre\" required>\n    </mat-form-field>\n\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Apellido\" formControlName=\"apellido\" required>\n    </mat-form-field>\n  </div>\n\n  <mat-form-field class=\"full-width\">\n    <input  matInput placeholder=\"Dirección\" formControlName=\"direccion\" required>\n  </mat-form-field>\n\n  <div class=\"full-width nombre-inputs\">\n\n    <mat-form-field class=\"half-width\">\n       <mat-select placeholder=\"Departamento\">\n         <mat-option value=\"option\">Option</mat-option>\n       </mat-select>\n     </mat-form-field>\n    <mat-form-field class=\"half-width\">\n        <mat-select placeholder=\"Municipio\">\n          <mat-option value=\"option\">Option</mat-option>\n        </mat-select>\n    </mat-form-field>\n\n  </div>\n\n  <div class=\"full-width nombre-inputs\">\n\n    <mat-form-field class=\"half-width\">\n       <mat-select placeholder=\"Tipo de Documento\" #tipoDeDocumento value=\"CC\" >\n         <mat-option value=\"CC\">Cedula de Ciudadania</mat-option>\n         <mat-option value=\"CE\">Cedula de Exptranjeria</mat-option>\n         <mat-option value=\"Pasaporte\">Pasaporte</mat-option>\n         <mat-option value=\"Carnet Diplomatico\">Carnet Diplomatico</mat-option>\n       </mat-select>\n     </mat-form-field>\n    <mat-form-field class=\"half-width\">\n        <input type=\"tel\" matInput placeholder=\"{{ tipoDeDocumento.value }}\" formControlName=\"identificacion\" required>\n    </mat-form-field>\n\n  </div>\n\n\n  <div class=\"full-width nombre-inputs\">\n\n    <mat-form-field class=\"half-width\">\n      <input matInput placeholder=\"Email\" [formControl]=\"email\" required>\n      <mat-error *ngIf=\"email.invalid\">{{getErrorMessage()}}</mat-error>\n    </mat-form-field>\n\n\n    <mat-form-field class=\"half-width\">\n\n      <input type=\"tel\" matInput placeholder=\"Telefono\" formControlName=\"telefono\" required>\n\n    </mat-form-field>\n\n\n  </div>\n\n\n  <button mat-flat-button class=\"btn-ingresar\" [disabled]=\"!formularioNatural.valid || email.invalid\" (click)=\"log()\" >Continuar</button>\n</form>\n"
+module.exports = "<form\n  [formGroup]=\"formularioNatural\"\n  class=\"full-width\"\n  (ngSubmit)=\"log()\">\n\n\n\n  <div class=\"full-width nombre-inputs\">\n    <mat-form-field class=\"half-width\">\n      <input\n        matInput\n        placeholder=\"Nombre\"\n        formControlName=\"nombre\"\n        required>\n    </mat-form-field>\n\n    <mat-form-field class=\"half-width\">\n      <input\n        matInput\n        placeholder=\"Apellido\"\n        formControlName=\"apellido\"\n        required>\n    </mat-form-field>\n  </div>\n\n\n  <div class=\"full-width\" formGroupName=\"ubicacion\">\n\n\n    <mat-form-field class=\"full-width\">\n      <input\n        matInput\n        placeholder=\"Dirección\"\n        formControlName=\"direccion\"\n        required>\n    </mat-form-field>\n\n    <div class=\"full-width nombre-inputs\">\n\n      <mat-form-field class=\"half-width\">\n        <mat-select\n          placeholder=\"Departamento\"\n          formControlName=\"departamento\">\n\n          <mat-option value=\"option\">Option</mat-option>\n\n        </mat-select>\n      </mat-form-field>\n\n      <mat-form-field class=\"half-width\">\n        <mat-select\n          placeholder=\"Municipio\"\n          formControlName=\"municipio\">\n\n          <mat-option value=\"option\">Option</mat-option>\n\n        </mat-select>\n      </mat-form-field>\n\n    </div>\n\n  </div>\n\n\n  <div formGroupName=\"documento\" class=\"full-width nombre-inputs\">\n\n    <mat-form-field class=\"half-width\">\n       <mat-select\n         #tipoDeDocumento\n         placeholder=\"Tipo de Documento\"\n         formControlName=\"tipoDeDocumento\" >\n\n         <mat-option #opcionCC value=\"CC\">Cedula de Ciudadania</mat-option>\n         <mat-option value=\"CE\">Cedula de Exptranjeria</mat-option>\n         <mat-option value=\"Pasaporte\">Pasaporte</mat-option>\n         <mat-option value=\"Carnet Diplomatico\">Carnet Diplomatico</mat-option>\n\n       </mat-select>\n    </mat-form-field>\n\n    <mat-form-field class=\"half-width\">\n      <input\n        type=\"tel\"\n        matInput\n        placeholder=\"{{ tipoDeDocumento.value || opcionCC.value }}\"\n        formControlName=\"numeroDeDocumento\"\n        required >\n    </mat-form-field>\n\n  </div>\n\n\n  <div class=\"full-width nombre-inputs mb-1\">\n\n    <mat-form-field class=\"half-width\">\n      <input\n        matInput\n        placeholder=\"Email\"\n        formControlName=\"email\"\n        required>\n      <mat-error *ngIf=\"formularioNatural.get('email').invalid\">{{getErrorMessage()}}</mat-error>\n    </mat-form-field>\n\n\n    <mat-form-field class=\"half-width\">\n      <input\n        type=\"tel\"\n        matInput\n        placeholder=\"Telefono\"\n        formControlName=\"telefono\"\n        required>\n    </mat-form-field>\n\n  </div>\n\n\n  <button\n    mat-flat-button\n    type=\"submit\"\n    class=\"btn\"\n    [disabled]=\"!formularioNatural.valid\">\n    Continuar\n  </button>\n\n\n</form>\n"
 
 /***/ }),
 
@@ -314,23 +423,30 @@ __webpack_require__.r(__webpack_exports__);
 var DemandaNaturalComponent = /** @class */ (function () {
     function DemandaNaturalComponent(formBuilder) {
         this.formBuilder = formBuilder;
-        this.email = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]);
         this.formularioNatural = this.formBuilder.group({
             'nombre': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             'apellido': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            'direccion': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            'identificacion': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])],
             'telefono': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])],
+            'email': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email])],
+            'documento': this.formBuilder.group({
+                'tipoDeDocumento': ['CC'],
+                'numeroDeDocumento': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])]
+            }),
+            'ubicacion': this.formBuilder.group({
+                'direccion': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+                'departamento': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+                'municipio': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+            })
         });
     }
     DemandaNaturalComponent.prototype.ngOnInit = function () {
     };
     DemandaNaturalComponent.prototype.log = function () {
-        console.log(this.formularioNatural);
+        console.log(this.formularioNatural.value);
     };
     DemandaNaturalComponent.prototype.getErrorMessage = function () {
-        return this.email.hasError('required') ? 'Introduzca un email' :
-            this.email.hasError('email') ? 'Email no vaildo' : '';
+        return this.formularioNatural.get('email').hasError('required') ? 'Introduzca un email' :
+            this.formularioNatural.get('email').hasError('email') ? 'Email no vaildo' : '';
     };
     DemandaNaturalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -354,7 +470,7 @@ var DemandaNaturalComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".generar-pdf-container{\r\n\twidth: 100%;\r\n\theight: 92%;\r\n\tmargin: auto;\r\n\tpadding: 0 1.5rem;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZ2VuZXJhci1wZGYuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFlBQVk7Q0FDWixZQUFZO0NBQ1osYUFBYTtDQUNiLGtCQUFrQjtDQUNsQixjQUFjO0NBQ2QsdUJBQXVCO0NBQ3ZCLG9CQUFvQjtDQUNwQix3QkFBd0I7Q0FDeEI7Ozs7QUFJRDtFQUNFLFlBQVk7Q0FDYiIsImZpbGUiOiJzcmMvYXBwL2dlbmVyYXItcGRmL2dlbmVyYXItcGRmLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZ2VuZXJhci1wZGYtY29udGFpbmVye1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogOTIlO1xyXG5cdG1hcmdpbjogYXV0bztcclxuXHRwYWRkaW5nOiAwIDEuNXJlbTtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblx0YWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuXHJcblxyXG4uZnVsbC13aWR0aCB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuIl19 */"
+module.exports = ".generar-pdf-container{\r\n\twidth: 100%;\r\n\theight: auto;\r\n\tmargin: auto;\r\n\t\r\n\tpadding: 0 1.5rem;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n\r\n.tooltip{\r\n\tmargin-left: 1rem;\r\n}\r\n\r\n.titulo{\r\n\tcolor: #2196f3;\r\n\tfont-size: 2rem;\r\n\tfont-weight: normal;\r\n\tline-height: 110%;\r\n\tmargin-top: 1rem;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhci1wZGYvZ2VuZXJhci1wZGYuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFlBQVk7Q0FDWixhQUFhO0NBQ2IsYUFBYTs7Q0FFYixrQkFBa0I7Q0FDbEIsY0FBYztDQUNkLHVCQUF1QjtDQUN2QixvQkFBb0I7Q0FDcEIsd0JBQXdCO0NBQ3hCOztBQUVEO0NBQ0Msa0JBQWtCO0NBQ2xCOztBQUVEO0NBQ0MsZUFBZTtDQUNmLGdCQUFnQjtDQUNoQixvQkFBb0I7Q0FDcEIsa0JBQWtCO0NBQ2xCLGlCQUFpQjtDQUNqQiIsImZpbGUiOiJzcmMvYXBwL2dlbmVyYXItcGRmL2dlbmVyYXItcGRmLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZ2VuZXJhci1wZGYtY29udGFpbmVye1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogYXV0bztcclxuXHRtYXJnaW46IGF1dG87XHJcblx0XHJcblx0cGFkZGluZzogMCAxLjVyZW07XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi50b29sdGlwe1xyXG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xyXG59XHJcblxyXG4udGl0dWxve1xyXG5cdGNvbG9yOiAjMjE5NmYzO1xyXG5cdGZvbnQtc2l6ZTogMnJlbTtcclxuXHRmb250LXdlaWdodDogbm9ybWFsO1xyXG5cdGxpbmUtaGVpZ2h0OiAxMTAlO1xyXG5cdG1hcmdpbi10b3A6IDFyZW07XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -365,7 +481,7 @@ module.exports = ".generar-pdf-container{\r\n\twidth: 100%;\r\n\theight: 92%;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"container\"> -->\n\n<app-nav-bar>\n\n\n  <div class=\"generar-pdf-container\">\n\n\n    <mat-form-field class=\"full-width\">\n\n      <mat-select #seleccion placeholder=\"Tipo de Persona\" (focus)=\"log()\" [(value)]=\"opcion\">\n        <mat-option value=\"opcion1\">Persona Juridica</mat-option>\n        <mat-option value=\"opcion2\">Persona Natural</mat-option>\n      </mat-select>\n\n    </mat-form-field>\n\n\n\n    <!-- Persona de tipo Juridica -->\n\n    <app-demanda-juridica class=\"full-width\" *ngIf=\"seleccion.value == 'opcion1'\"></app-demanda-juridica>\n\n    <!-- persona de tipo Natural -->\n\n    <app-demanda-natural class=\"full-width\" *ngIf=\"seleccion.value == 'opcion2'\"></app-demanda-natural>\n\n\n  </div>\n\n</app-nav-bar>\n<!-- </div> -->\n"
+module.exports = "<!-- SideNav -->\n<app-nav-bar>\n\n\n  <div class=\"generar-pdf-container\">\n\n  <h5 class=\"titulo\">Iniciar Demanda</h5>\n\n    <mat-card class=\"card\">\n\n      <!-- Tipo de demanda -->\n      <mat-form-field class=\"full-width\">\n\n        <mat-select\n          #seleccion\n          placeholder=\"Tipo de Persona\"\n          [(value)]=\"opcion\">\n\n          <mat-option value=\"opcion1\">Persona Juridica</mat-option>\n          <mat-option value=\"opcion2\">Persona Natural</mat-option>\n\n        </mat-select>\n        <mat-icon\n          class=\"tooltip\"\n          matSuffix\n          matTooltip=\"Elija la persona a demandar\">\n          help\n        </mat-icon>\n      </mat-form-field>\n\n\n\n      <!-- Persona de tipo Juridica -->\n\n      <app-demanda-juridica\n        class=\"full-width\"\n        *ngIf=\"seleccion.value == 'opcion1'\">\n      </app-demanda-juridica>\n\n      <!-- persona de tipo Natural -->\n\n      <app-demanda-natural\n        class=\"full-width\"\n        *ngIf=\"seleccion.value == 'opcion2'\">\n      </app-demanda-natural>\n\n\n    </mat-card>\n\n\n  </div>\n\n</app-nav-bar>\n"
 
 /***/ }),
 
@@ -387,9 +503,6 @@ var GenerarPdfComponent = /** @class */ (function () {
     function GenerarPdfComponent() {
         this.opcion = 'opcion1';
     }
-    GenerarPdfComponent.prototype.log = function () {
-        console.log(this.opcion);
-    };
     GenerarPdfComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-generar-pdf',
@@ -436,7 +549,10 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTooltipModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTooltipModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSlideToggleModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCheckboxModule"]
             ],
             exports: [
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
@@ -449,7 +565,10 @@ var MaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTooltipModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTooltipModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSlideToggleModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCheckboxModule"]
             ],
         })
     ], MaterialModule);
@@ -478,7 +597,7 @@ module.exports = ".sidenav-container {\n  height: 100%;\n}\n\n.sidenav {\n  widt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport=\"false\"\n      [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\n      [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n      [opened]=\"!(isHandset$ | async)\">\n    <mat-toolbar>LaborApp</mat-toolbar>\n    <mat-nav-list>\n      <a mat-list-item href=\"#\">Link 1</a>\n      <a mat-list-item href=\"#\">Link 2</a>\n      <a mat-list-item routerLink=\"\">Salir</a>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <mat-toolbar class=\"nav-bar\">\n      <button\n\n        type=\"button\"\n        aria-label=\"Toggle sidenav\"\n        mat-icon-button\n        (click)=\"drawer.toggle()\"\n        *ngIf=\"isHandset$ | async\">\n        <mat-icon aria-label=\"Side nav toggle icon\" class=\"boton\">menu</mat-icon>\n      </button>\n      <span class=\"titulo\">LaborApp</span>\n    </mat-toolbar>\n    <!-- Add Content Here -->\n\n    <ng-content></ng-content>\n\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-sidenav #drawer class=\"sidenav\" fixedInViewport=\"true\"\n      [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\n      [mode]=\"'over'\">\n    <mat-toolbar>LaborApp</mat-toolbar>\n    <mat-nav-list>\n      <a mat-list-item href=\"#\">Generar Demanda</a>\n      <a mat-list-item href=\"#\">Contactar Abogado</a>\n      <a mat-list-item routerLink=\"\">Salir</a>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <mat-toolbar class=\"nav-bar\">\n      <button\n\n        type=\"button\"\n        aria-label=\"Toggle sidenav\"\n        mat-icon-button\n        (click)=\"drawer.toggle()\">\n        <mat-icon aria-label=\"Side nav toggle icon\" class=\"boton\">menu</mat-icon>\n      </button>\n\n      <span class=\"titulo\">LaborApp</span>\n    </mat-toolbar>\n    <!-- Add Content Here -->\n\n    <ng-content></ng-content>\n\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
 
 /***/ }),
 
@@ -506,6 +625,10 @@ var NavBarComponent = /** @class */ (function () {
         this.isHandset$ = this.breakpointObserver.observe(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__["Breakpoints"].Handset)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (result) { return result.matches; }));
     }
+    NavBarComponent.prototype.log = function () {
+        console.log(this.isHandset$);
+        console.log(this.breakpointObserver);
+    };
     NavBarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-nav-bar',
@@ -528,7 +651,7 @@ var NavBarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n.sign-in-container{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tmargin: auto;\r\n\tpadding: 1.5rem;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n.sign-in-container .img-container,\r\n.sign-in-container .img-container img{\r\n\twidth: 15rem;\r\n}\r\n.sign-in-container form{\r\n\twidth: 100%;\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n\tflex-direction: column;\r\n}\r\n.sign-in-container form .inputs{\r\n\twidth: 100%;\r\n\tmargin-bottom: 1rem;\r\n}\r\n.sign-in-container form .link{\r\n\twidth: 100%;\r\n\tdisplay: flex;\r\n\tjustify-content: space-between;\r\n\tcolor: #1899fc;\r\n\tmargin-bottom: 1rem;\r\n}\r\n.sign-in-container form .link a,\r\n/* .sign-in-container form h3, */\r\n.sign-in-container button{\r\n\tfont-size: 1rem;\r\n\tline-height: 2.25rem;\r\n\tpadding: 0 1rem;\r\n}\r\n.sign-in-container form .link a{\r\n\tpadding: 0 0.09375rem;\r\n}\r\n.sign-in-container .btn-ingresar{\r\n\tbackground: #1899fc;\r\n\tcolor: #fff;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lnbi1pbi9zaWduLWluLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0NBQ0MsWUFBWTtDQUNaLGFBQWE7Q0FDYixhQUFhO0NBQ2IsZ0JBQWdCO0NBQ2hCLGNBQWM7Q0FDZCx1QkFBdUI7Q0FDdkIsb0JBQW9CO0NBQ3BCLHdCQUF3QjtDQUN4QjtBQUNEOztDQUVDLGFBQWE7Q0FDYjtBQUNEO0NBQ0MsWUFBWTtDQUNaLGNBQWM7Q0FDZCxvQkFBb0I7Q0FDcEIsd0JBQXdCO0NBQ3hCLHVCQUF1QjtDQUN2QjtBQUNEO0NBQ0MsWUFBWTtDQUNaLG9CQUFvQjtDQUNwQjtBQUNEO0NBQ0MsWUFBWTtDQUNaLGNBQWM7Q0FDZCwrQkFBK0I7Q0FDL0IsZUFBZTtDQUNmLG9CQUFvQjtDQUNwQjtBQUNEOzs7Q0FHQyxnQkFBZ0I7Q0FDaEIscUJBQXFCO0NBQ3JCLGdCQUFnQjtDQUNoQjtBQUNEO0NBQ0Msc0JBQXNCO0NBQ3RCO0FBQ0Q7Q0FDQyxvQkFBb0I7Q0FDcEIsWUFBWTtDQUNaIiwiZmlsZSI6InNyYy9hcHAvc2lnbi1pbi9zaWduLWluLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuLnNpZ24taW4tY29udGFpbmVye1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogMTAwJTtcclxuXHRtYXJnaW46IGF1dG87XHJcblx0cGFkZGluZzogMS41cmVtO1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcbi5zaWduLWluLWNvbnRhaW5lciAuaW1nLWNvbnRhaW5lcixcclxuLnNpZ24taW4tY29udGFpbmVyIC5pbWctY29udGFpbmVyIGltZ3tcclxuXHR3aWR0aDogMTVyZW07XHJcbn1cclxuLnNpZ24taW4tY29udGFpbmVyIGZvcm17XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG5cdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbn1cclxuLnNpZ24taW4tY29udGFpbmVyIGZvcm0gLmlucHV0c3tcclxuXHR3aWR0aDogMTAwJTtcclxuXHRtYXJnaW4tYm90dG9tOiAxcmVtO1xyXG59XHJcbi5zaWduLWluLWNvbnRhaW5lciBmb3JtIC5saW5re1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0anVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cdGNvbG9yOiAjMTg5OWZjO1xyXG5cdG1hcmdpbi1ib3R0b206IDFyZW07XHJcbn1cclxuLnNpZ24taW4tY29udGFpbmVyIGZvcm0gLmxpbmsgYSxcclxuLyogLnNpZ24taW4tY29udGFpbmVyIGZvcm0gaDMsICovXHJcbi5zaWduLWluLWNvbnRhaW5lciBidXR0b257XHJcblx0Zm9udC1zaXplOiAxcmVtO1xyXG5cdGxpbmUtaGVpZ2h0OiAyLjI1cmVtO1xyXG5cdHBhZGRpbmc6IDAgMXJlbTtcclxufVxyXG4uc2lnbi1pbi1jb250YWluZXIgZm9ybSAubGluayBhe1xyXG5cdHBhZGRpbmc6IDAgMC4wOTM3NXJlbTtcclxufVxyXG4uc2lnbi1pbi1jb250YWluZXIgLmJ0bi1pbmdyZXNhcntcclxuXHRiYWNrZ3JvdW5kOiAjMTg5OWZjO1xyXG5cdGNvbG9yOiAjZmZmO1xyXG59XHJcbiJdfQ== */"
+module.exports = ".sign-in-container{\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tmargin: auto;\r\n\tpadding: 1.5rem;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n}\r\n.sign-in-container .img-container,\r\n.sign-in-container .img-container img{\r\n\twidth: 15rem;\r\n}\r\n.sign-in-container form{\r\n\twidth: 100%;\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n\tflex-direction: column;\r\n}\r\n.sign-in-container form .inputs{\r\n\twidth: 100%;\r\n\tmargin-bottom: 1rem;\r\n}\r\n.sign-in-container form .link{\r\n\twidth: 100%;\r\n\tdisplay: flex;\r\n\tjustify-content: space-between;\r\n\tcolor: #1899fc;\r\n}\r\n.sign-in-container form .link a,\r\n.sign-in-container button{\r\n\tfont-size: 1rem;\r\n\tline-height: 2.25rem;\r\n\tpadding: 0 1rem;\r\n}\r\n.sign-in-container form .link a{\r\n\tpadding: 0 0.09375rem;\r\n}\r\n.parrafo{\r\n \tmargin: 1rem 0;\r\n \tfont-size: 1.5rem;\r\n\ttext-align: center;\r\n \tfont-family: 'roboto';\r\n \tfont-weight: normal;\r\n}\r\n@media (min-width:470px) {\r\n\t.card{\r\n\t\twidth: 423px;\r\n\t}\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lnbi1pbi9zaWduLWluLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxZQUFZO0NBQ1osYUFBYTtDQUNiLGFBQWE7Q0FDYixnQkFBZ0I7Q0FDaEIsY0FBYztDQUNkLHVCQUF1QjtDQUN2QixvQkFBb0I7Q0FDcEIsd0JBQXdCO0NBQ3hCO0FBQ0Q7O0NBRUMsYUFBYTtDQUNiO0FBQ0Q7Q0FDQyxZQUFZO0NBQ1osY0FBYztDQUNkLG9CQUFvQjtDQUNwQix3QkFBd0I7Q0FDeEIsdUJBQXVCO0NBQ3ZCO0FBQ0Q7Q0FDQyxZQUFZO0NBQ1osb0JBQW9CO0NBQ3BCO0FBQ0Q7Q0FDQyxZQUFZO0NBQ1osY0FBYztDQUNkLCtCQUErQjtDQUMvQixlQUFlO0NBQ2Y7QUFDRDs7Q0FFQyxnQkFBZ0I7Q0FDaEIscUJBQXFCO0NBQ3JCLGdCQUFnQjtDQUNoQjtBQUNEO0NBQ0Msc0JBQXNCO0NBQ3RCO0FBRUQ7RUFDRSxlQUFlO0VBQ2Ysa0JBQWtCO0NBQ25CLG1CQUFtQjtFQUNsQixzQkFBc0I7RUFDdEIsb0JBQW9CO0NBQ3JCO0FBR0Q7Q0FDQztFQUNDLGFBQWE7RUFDYjtDQUNEIiwiZmlsZSI6InNyYy9hcHAvc2lnbi1pbi9zaWduLWluLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2lnbi1pbi1jb250YWluZXJ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiAxMDAlO1xyXG5cdG1hcmdpbjogYXV0bztcclxuXHRwYWRkaW5nOiAxLjVyZW07XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuLnNpZ24taW4tY29udGFpbmVyIC5pbWctY29udGFpbmVyLFxyXG4uc2lnbi1pbi1jb250YWluZXIgLmltZy1jb250YWluZXIgaW1ne1xyXG5cdHdpZHRoOiAxNXJlbTtcclxufVxyXG4uc2lnbi1pbi1jb250YWluZXIgZm9ybXtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcblx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxufVxyXG4uc2lnbi1pbi1jb250YWluZXIgZm9ybSAuaW5wdXRze1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdG1hcmdpbi1ib3R0b206IDFyZW07XHJcbn1cclxuLnNpZ24taW4tY29udGFpbmVyIGZvcm0gLmxpbmt7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcblx0Y29sb3I6ICMxODk5ZmM7XHJcbn1cclxuLnNpZ24taW4tY29udGFpbmVyIGZvcm0gLmxpbmsgYSxcclxuLnNpZ24taW4tY29udGFpbmVyIGJ1dHRvbntcclxuXHRmb250LXNpemU6IDFyZW07XHJcblx0bGluZS1oZWlnaHQ6IDIuMjVyZW07XHJcblx0cGFkZGluZzogMCAxcmVtO1xyXG59XHJcbi5zaWduLWluLWNvbnRhaW5lciBmb3JtIC5saW5rIGF7XHJcblx0cGFkZGluZzogMCAwLjA5Mzc1cmVtO1xyXG59XHJcblxyXG4ucGFycmFmb3tcclxuIFx0bWFyZ2luOiAxcmVtIDA7XHJcbiBcdGZvbnQtc2l6ZTogMS41cmVtO1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuIFx0Zm9udC1mYW1pbHk6ICdyb2JvdG8nO1xyXG4gXHRmb250LXdlaWdodDogbm9ybWFsO1xyXG59XHJcblxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6NDcwcHgpIHtcclxuXHQuY2FyZHtcclxuXHRcdHdpZHRoOiA0MjNweDtcclxuXHR9XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -539,7 +662,7 @@ module.exports = "\r\n.sign-in-container{\r\n\twidth: 100%;\r\n\theight: 100%;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"sign-in-container\">\r\n\r\n\r\n    <div class=\"img-container\">\r\n      <img src=\"./assets/img/logo.png\" alt=\"Logo Laborapp\">\r\n    </div>\r\n\r\n\r\n    <form >\r\n\r\n      <!-- <h3 class=\"mat-subheading-2\">Inicio de secion:</h3> -->\r\n\r\n      <mat-form-field class=\"inputs\">\r\n        <input matInput placeholder=\"Correo\" [formControl]=\"emailFormControl\"\r\n        [errorStateMatcher]=\"matcher\">\r\n        <!-- <mat-hint>Errors appear instantly!</mat-hint> -->\r\n        <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n          Correo Invalido!\r\n        </mat-error>\r\n        <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n          El correo es <strong>requerido</strong>\r\n        </mat-error>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field class=\"inputs\">\r\n        <input matInput placeholder=\"Contraseña\" [type]=\"hide ? 'password' : 'text'\">\r\n        <mat-icon matSuffix (click)=\"hide = !hide\">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n      </mat-form-field>\r\n\r\n      <div class=\"link\">\r\n        <a mat-button routerLink=\".\">Olvidé mi contraseña</a>\r\n\r\n        <a mat-button routerLink=\".\">Crear cuenta</a>\r\n      </div>\r\n\r\n\r\n    <button mat-flat-button (click)=\"openSnackBar()\" class=\"btn-ingresar\" routerLink=\"/pdf\">Ingresar</button>\r\n  </form>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"sign-in-container\">\r\n\r\n\r\n    <div class=\"img-container\">\r\n      <img src=\"./assets/img/logo.png\" alt=\"Logo Laborapp\">\r\n    </div>\r\n\r\n\r\n      <form >\r\n\r\n        <!-- <h3 class=\"mat-subheading-2\">Inicio de secion:</h3> -->\r\n        <h5 class=\"parrafo\">Por favor, inicie sesión con su cuenta</h5>\r\n\r\n        <mat-card class=\"card\">\r\n\r\n        <mat-form-field class=\"inputs\">\r\n          <input matInput placeholder=\"Correo\" [formControl]=\"emailFormControl\"\r\n          [errorStateMatcher]=\"matcher\" required>\r\n          <!-- <mat-hint>Errors appear instantly!</mat-hint> -->\r\n          <mat-error *ngIf=\"emailFormControl.hasError('email') && !emailFormControl.hasError('required')\">\r\n            Correo Invalido!\r\n          </mat-error>\r\n          <mat-error *ngIf=\"emailFormControl.hasError('required')\">\r\n            El correo es <strong>requerido</strong>\r\n          </mat-error>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field class=\"inputs\">\r\n          <input matInput placeholder=\"Contraseña\" [type]=\"hide ? 'password' : 'text'\" required>\r\n          <mat-icon matSuffix (click)=\"hide = !hide\">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>\r\n        </mat-form-field>\r\n\r\n        <div class=\"link\">\r\n          <a mat-button routerLink=\".\">Olvidé mi contraseña</a>\r\n\r\n          <a mat-button routerLink=\".\">Crear cuenta</a>\r\n        </div>\r\n\r\n      </mat-card>\r\n\r\n\r\n        <button mat-flat-button (click)=\"openSnackBar()\" class=\"btn\" routerLink=\"/pdf\">Entrar</button>\r\n      </form>\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -580,7 +703,7 @@ var SignInComponent = /** @class */ (function () {
     };
     //MatSnackBar
     SignInComponent.prototype.openSnackBar = function () {
-        this.snackBar.open('Credenciales incorrectaas', '', {
+        this.snackBar.open('Credenciales incorrectas', '', {
             duration: 2500,
         });
     };
