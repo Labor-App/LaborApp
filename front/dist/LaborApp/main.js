@@ -244,7 +244,7 @@ __webpack_require__.r(__webpack_exports__);
 var DemandaJuridicaComponent = /** @class */ (function () {
     function DemandaJuridicaComponent(formBuilder) {
         this.formBuilder = formBuilder;
-        this.formularioRepresentante = null;
+        this.formularioRepresentante = this.formularioJuridica;
         this.formularioJuridica = this.formBuilder.group({
             'razonSocial': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             'nit': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]+$/)])],
