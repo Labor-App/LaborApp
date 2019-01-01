@@ -10,7 +10,7 @@ export class DemandaJuridicaComponent implements OnInit {
 
   formularioJuridica:FormGroup;
 
-  formularioRepresentante:FormGroup = null;
+  formularioRepresentante:FormGroup = this.formularioJuridica;
 
   constructor(private formBuilder: FormBuilder) {
 
