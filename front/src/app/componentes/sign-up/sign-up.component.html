@@ -1,4 +1,5 @@
-<app-nom-ape-gene></app-nom-ape-gene>
-<app-documento></app-documento>
-<app-fecha-nacimiento></app-fecha-nacimiento>
-<app-correo-contra></app-correo-contra>
+<app-nom-ape-gene *ngIf="nombreApeVisual" (Btn_nombreApeVisual)="MostrarNombreVisual($event)"></app-nom-ape-gene>
+<app-documento *ngIf="documentoVisual"></app-documento>
+<app-fecha-nacimiento *ngIf="fechaNacivisuai"></app-fecha-nacimiento>
+<app-correo-contra *ngIf="correoContraseVisua"></app-correo-contra>
+

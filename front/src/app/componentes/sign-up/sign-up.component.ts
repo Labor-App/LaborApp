@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+nombreApeVisual: boolean = true;
+documentoVisual: boolean = false;
+fechaNacivisuai: boolean = false;
+correoContraseVisua: boolean = false ;
 
-  ngOnInit() {
+
+  constructor() { }
+  ngOnInit() {}
+
+  MostrarNombreVisual(Btn_nombreApeVisual): void {
+console.log(Btn_nombreApeVisual);
+this.nombreApeVisual = false;
+this.documentoVisual  = true;
+this.fechaNacivisuai  = false;
+this.correoContraseVisua  = false ;
+
+
   }
 
 }
