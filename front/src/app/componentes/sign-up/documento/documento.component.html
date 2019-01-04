@@ -1,0 +1,35 @@
+<div class="signup-container">
+
+    
+    
+    <form>
+
+    <h5 class="parrafo">Documento de identificación</h5>
+    <mat-card class="card">
+      
+        <mat-form-field class="inputs full-width">
+            <input matInput placeholder="Número cédula:* " >
+        </mat-form-field>
+        
+        
+        <mat-form-field class="inputs full-width">
+            <input matInput placeholder="Apellidos:* " >
+                
+        </mat-form-field>
+
+        <mat-form-field class="inputs full-width">
+            <mat-label>Lugar de expedición</mat-label>
+            <mat-select #mode value="side">
+              <mat-option value="Bogotá">Bogotá</mat-option>
+              <mat-option value="Calí">Calí</mat-option>
+              <mat-option value="Medellín">Medellín</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </mat-card>
+
+        <button mat-flat-button class="btn" >Entrar</button>
+    </form>
+    
+
+</div>
