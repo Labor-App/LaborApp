@@ -2,13 +2,13 @@
 
     
     
-    <form>
+    <form [formGroup]="fechaNacimiento">
 
     <h5 class="parrafo">Fecha de nacimiento</h5>
     <mat-card class="card">
       
-            <mat-form-field class="example-full-width">
-                    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Elegir fecha de nacimiento">
+            <mat-form-field class="inputs full-width">
+                    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Elegir fecha de nacimiento" formControlName="nacimiento" required [(ngModel)]="valorFechaNacimiento">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -17,7 +17,7 @@
 
         </mat-card>
 
-        <button mat-flat-button class="btn" >Siguiente</button>
+        <button mat-flat-button class="btn" (click)="fechaNaci_clickBtnSiguiente()" [disabled]="fechaNacimiento.invalid" >Siguiente</button>
     </form>
     
 

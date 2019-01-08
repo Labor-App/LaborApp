@@ -2,24 +2,30 @@
 
     
     
-    <form>
+    <form [formGroup]="documento">
 
     <h5 class="parrafo">Documento de identificación</h5>
     <mat-card class="card">
       
+
         <mat-form-field class="inputs full-width">
-            <input matInput placeholder="Número cédula:* " >
-        </mat-form-field>
-        
-        
+            <mat-label>Genero</mat-label>
+            <mat-select #mode value="side" formControlName="genero"  required [(ngModel)]="generoUs">
+               <mat-option value="Masculino">Masculino</mat-option>
+              <mat-option value="Femenino">Femenino</mat-option>
+              <mat-option value="Otro">Otro</mat-option>
+            </mat-select>
+          </mat-form-field> 
+
+
         <mat-form-field class="inputs full-width">
-            <input matInput placeholder="Apellidos:* " >
-                
+            <input matInput placeholder="Número cédula:" formControlName="cedula" required [(ngModel)]="cedulaUs">
         </mat-form-field>
+
 
         <mat-form-field class="inputs full-width">
             <mat-label>Lugar de expedición</mat-label>
-            <mat-select #mode value="side">
+            <mat-select #mode value="side" formControlName="lugarCedula" required  [(ngModel)]="lugarCedulaUs">
               <mat-option value="Bogotá">Bogotá</mat-option>
               <mat-option value="Calí">Calí</mat-option>
               <mat-option value="Medellín">Medellín</mat-option>
@@ -28,7 +34,7 @@
 
         </mat-card>
 
-        <button mat-flat-button class="btn"  >Siguiente</button>
+        <button mat-flat-button class="btn" (click)="Doc_clickBtnSiguiente()" [disabled]="documento.invalid">Siguiente</button>
     </form>
     
 

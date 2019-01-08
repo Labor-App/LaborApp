@@ -9,18 +9,18 @@
       
 
         <mat-form-field class="inputs full-width">
-            <input matInput placeholder="Nombres:* " formControlName="nombre" required>
+            <input matInput placeholder="Nombres: " formControlName="nombre" required [(ngModel)]="nombreUsuario">
         </mat-form-field>
         
         
         <mat-form-field class="inputs full-width">
-            <input matInput placeholder="Apellidos:* " formControlName="apellido" required>
+            <input matInput placeholder="Apellidos: " formControlName="apellido" required [(ngModel)]="apellidoUsuario">
                 
         </mat-form-field>
 
         <mat-form-field class="inputs full-width">
             <mat-label>Ciudad de residencia</mat-label>
-            <mat-select #mode value="side" formControlName="ciudadResiden" required>
+            <mat-select #mode value="side" formControlName="ciudadResiden" required [(ngModel)]="ciudadUsuario">
               <mat-option value="Bogotá">Bogotá</mat-option>
               <mat-option value="Calí">Calí</mat-option>
               <mat-option value="Medellín">Medellín</mat-option>

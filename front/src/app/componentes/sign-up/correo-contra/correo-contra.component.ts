@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validator, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-correo-contra',
@@ -6,10 +7,52 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./correo-contra.component.css']
 })
 export class CorreoContraComponent implements OnInit {
+  // email = new FormControl('', [Validators.required, Validators.email]);
+  @Output() Btn_correoContrasena = new EventEmitter();
+  correoContrasenaForm: FormGroup;
+  correoUs: string;
+  keyUs: string;
+  againKeyUs: string;
 
-  constructor() { }
+
+  constructor(formBuilder: FormBuilder) {
+    this. correoContrasenaForm = formBuilder.group({
+      'correo': [null, Validators.required],
+      'key': [null, Validators.required],
+      'keyAgain': [null, Validators.required]
+      // Se ingresan los campos del formulario que se quieren validar
+
+      });
+
+
+  }
 
   ngOnInit() {
+
   }
+
+  correoContrase_clickBtnSiguiente(): void {
+    const datoCorreoContrase: Object = {
+      Btn_Acti_fechaNaci : true,
+      correoUs: this.correoUs,
+      keyUs: this.keyUs,
+      againKeyUs: this.againKeyUs
+    };
+
+    this.Btn_correoContrasena.emit(datoCorreoContrase);
+
+
+  }
+
+
+
+
+  // getErrorMessage() {
+    // return this.email.hasError('required') ? 'Debes introducir un valor' :
+        // this.email.hasError('email') ? 'correo invalido' :
+            // '';
+  // }
+
+
 
 }

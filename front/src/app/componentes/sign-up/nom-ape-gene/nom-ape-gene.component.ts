@@ -11,9 +11,14 @@ import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 
 export class NomApeGeneComponent implements OnInit {
 
-@Output() Btn_nombreApeVisual = new EventEmitter(); //Se creo un evento 
+@Output() Btn_nombreApeVisual = new EventEmitter();
+// Con esta clase se puede enviar un evento a un clase padre
 
 apellidoNombre: FormGroup;
+
+nombreUsuario: string;
+apellidoUsuario: String;
+ciudadUsuario: String;
 
 
   constructor(formBuilder: FormBuilder) {
@@ -33,11 +38,25 @@ apellidoNombre: FormGroup;
 clickBtnSiguiente(): void {
 const Btn_Acti_nombreApeVisual = true;
 
+const infoComp: object = {
+nombreUs: this.nombreUsuario,
+apellidoUs: this.apellidoUsuario,
+ciudadUs: this.ciudadUsuario,
+Btn_Acti_nombreApeVisual: true
+};
 
 
-this.Btn_nombreApeVisual.emit(Btn_Acti_nombreApeVisual);
+
+this.Btn_nombreApeVisual.emit(infoComp);
+// es un método del evento que se esta creando
+
+console.log(this.nombreUsuario);
+console.log(this.apellidoUsuario);
+console.log(this.ciudadUsuario);
 
 
 }
+
+
 
 }

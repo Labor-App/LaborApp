@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
 //Forms
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -28,6 +29,11 @@ import { NomApeGeneComponent } from './componentes/sign-up/nom-ape-gene/nom-ape-
 import { DocumentoComponent } from './componentes/sign-up/documento/documento.component';
 import { FechaNacimientoComponent } from './componentes/sign-up/fecha-nacimiento/fecha-nacimiento.component';
 import { CorreoContraComponent } from './componentes/sign-up/correo-contra/correo-contra.component';
+
+// servicios
+
+import { UsuariosService } from './services/usuarios.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -57,11 +63,12 @@ import { CorreoContraComponent } from './componentes/sign-up/correo-contra/corre
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
 
 
   ],
-  providers: [],
+  providers: [UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

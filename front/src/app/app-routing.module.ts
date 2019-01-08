@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-//componet
+// component
 import { SignInComponent } from './componentes/sign-in/sign-in.component';
 import { GenerarPdfComponent } from './componentes/generar-pdf/generar-pdf.component';
 import { SignUpComponent } from './componentes/sign-up/sign-up.component';
