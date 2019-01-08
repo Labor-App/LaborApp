@@ -14,8 +14,8 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
 
   formularioRepresentante: FormGroup = this.formularioJuridica;
 
-
-  public listDepartamentosYMunicipios: any[];
+  // public listadoDepartamentos: any[] = [];
+  // public listDepartamentosYMunicipios: any[];
 
   constructor(private formBuilder: FormBuilder, private departamentosMunicipiosService: DepartamentosMunicipiosService) {
 
@@ -38,6 +38,7 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
 
   }
   ngOnInit() {
+<<<<<<< HEAD
     this.departamentosMunicipiosService.getMunicipios()
       .subscribe(
         (res: any) => {
@@ -45,6 +46,21 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
         },
         err => console.log(err)
       )
+=======
+    // this.departamentosMunicipiosService.getMunicipios()
+    //   .subscribe(
+    //     (res:any) => {
+    //       this.listDepartamentosYMunicipios = res;
+    //
+    //       for(let dYM of this.listDepartamentosYMunicipios){
+    //         this.listadoDepartamentos.push(dYM.departamento)
+    //       }
+    //       console.log(this.listadoDepartamentos)
+    //
+    //     },
+    //     err => console.log(err)
+    //   )
+>>>>>>> d3596a8082ea5610d0661a4603544b07cba0b5d6
 
   }
 
