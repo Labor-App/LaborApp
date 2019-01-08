@@ -1,7 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UsuariosService } from '../../services/usuarios.service';
+import { CedulaUsuarioService } from '../../services/cedula-usuario.service';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Usuario } from '../../models/Usuario';
+
 
 
 @Component({
@@ -21,7 +24,7 @@ datosForm3: any;
 datosForm4: any;
 
 
- constructor(private usuariosService: UsuariosService) {}
+ constructor(private usuariosService: UsuariosService, public cedulaUsuario: CedulaUsuarioService) {}
   ngOnInit() {}
 
 
@@ -72,6 +75,8 @@ mostrarDocumento(datosFormCedula: any): void {
       correoPersona: this.datosForm4.correoUs,
       codigoDaneMunicipio: 6768
     };
+
+    this.cedulaUsuario.guardarCedula(this.datosForm2.cedulaUsuario);
 
     this.usuariosService.enviarUsuarios('https://laborappi.herokuapp.com/api/laborapp/usuario/guardar', informacionUsuario).subscribe(
       res => {

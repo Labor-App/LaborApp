@@ -2,6 +2,7 @@ import { Component, OnInit,  AfterContentChecked } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import { DepartamentosMunicipiosService } from '../../../services/departamentos-municipios/departamentos-municipios.service';
+import { CedulaUsuarioService } from '../../../services/cedula-usuario.service';
 
 @Component({
   selector: 'app-demanda-juridica',
@@ -17,7 +18,8 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
   // public listadoDepartamentos: any[] = [];
   // public listDepartamentosYMunicipios: any[];
 
-  constructor(private formBuilder: FormBuilder, private departamentosMunicipiosService: DepartamentosMunicipiosService) {
+  constructor(private formBuilder: FormBuilder, private departamentosMunicipiosService: DepartamentosMunicipiosService, 
+    public cedulaUsuarioService: CedulaUsuarioService ) {
 
     this.formularioJuridica = this.formBuilder.group({
       'razonSocial':  [null, Validators.required],
@@ -35,18 +37,12 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
 
   ngAfterContentChecked(): void {
    console.log(this.formularioJuridica.value);
+   console.log(this.cedulaUsuarioService.obtenerCedual());
 
   }
   ngOnInit() {
-<<<<<<< HEAD
-    this.departamentosMunicipiosService.getMunicipios()
-      .subscribe(
-        (res: any) => {
-        this.listDepartamentosYMunicipios = res;
-        },
-        err => console.log(err)
-      )
-=======
+
+
     // this.departamentosMunicipiosService.getMunicipios()
     //   .subscribe(
     //     (res:any) => {
@@ -60,7 +56,7 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
     //     },
     //     err => console.log(err)
     //   )
->>>>>>> d3596a8082ea5610d0661a4603544b07cba0b5d6
+
 
   }
 
@@ -71,13 +67,14 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
 
   log( checked ){
 
-    if( checked ){
+    /** if( checked ){
       console.log(this.formularioJuridica.value.razonSocial);
       console.log(this.formularioRepresentante);
     }else{
       console.log(this.formularioJuridica.value.razonSocial);
-    }
+    }**/
 
+    
 
   }
 
