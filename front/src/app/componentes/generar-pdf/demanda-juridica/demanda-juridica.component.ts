@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
+import { DepartamentosMunicipiosService } from '../../../services/departamentos-municipios/departamentos-municipios.service';
+
 @Component({
   selector: 'app-demanda-juridica',
   templateUrl: './demanda-juridica.component.html',
@@ -12,7 +14,10 @@ export class DemandaJuridicaComponent implements OnInit {
 
   formularioRepresentante:FormGroup = this.formularioJuridica;
 
-  constructor(private formBuilder: FormBuilder) {
+
+  public listDepartamentosYMunicipios: any[];
+
+  constructor(private formBuilder: FormBuilder, private departamentosMunicipiosService: DepartamentosMunicipiosService) {
 
     this.formularioJuridica = this.formBuilder.group({
       'razonSocial':  [null, Validators.required],
@@ -25,6 +30,17 @@ export class DemandaJuridicaComponent implements OnInit {
         'municipio':    [null, Validators.required]
       })
     });
+
+  }
+
+  ngOnInit() {
+    this.departamentosMunicipiosService.getMunicipios()
+      .subscribe(
+        (res:any) => {
+        this.listDepartamentosYMunicipios = res;
+        },
+        err => console.log(err)
+      )
 
   }
 
@@ -56,8 +72,6 @@ export class DemandaJuridicaComponent implements OnInit {
   }
 
 
-  ngOnInit() {
-  }
 
 
   getErrorMessage() {
