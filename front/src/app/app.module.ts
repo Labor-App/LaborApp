@@ -31,7 +31,12 @@ import { CorreoContraComponent } from './componentes/sign-up/correo-contra/corre
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosService } from './services/usuarios.service';
 import { DepartamentosMunicipiosService } from './services/departamentos-municipios/departamentos-municipios.service';
+
 import { DemandadojuridicoService } from './services/demandadoJuridico/demandadojuridico.service';
+
+import { DemandaPdfService } from './services/demandaPdf/demanda-pdf.service';
+
+
 
 @NgModule({
   declarations: [
@@ -59,7 +64,9 @@ import { DemandadojuridicoService } from './services/demandadoJuridico/demandado
 
 
   ],
-  providers: [UsuariosService, DepartamentosMunicipiosService, DemandadojuridicoService ],
+
+  providers: [UsuariosService, DepartamentosMunicipiosService, DemandadojuridicoService, DemandaPdfService ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
