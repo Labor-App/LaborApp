@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  AfterContentChecked } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import { DepartamentosMunicipiosService } from '../../../services/departamentos-municipios/departamentos-municipios.service';
@@ -8,11 +8,11 @@ import { DepartamentosMunicipiosService } from '../../../services/departamentos-
   templateUrl: './demanda-juridica.component.html',
   styleUrls: ['./demanda-juridica.component.css']
 })
-export class DemandaJuridicaComponent implements OnInit {
+export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
 
-  formularioJuridica:FormGroup;
+  formularioJuridica: FormGroup;
 
-  formularioRepresentante:FormGroup = this.formularioJuridica;
+  formularioRepresentante: FormGroup = this.formularioJuridica;
 
 
   public listDepartamentosYMunicipios: any[];
@@ -33,10 +33,14 @@ export class DemandaJuridicaComponent implements OnInit {
 
   }
 
+  ngAfterContentChecked(): void {
+   console.log(this.formularioJuridica.value);
+
+  }
   ngOnInit() {
     this.departamentosMunicipiosService.getMunicipios()
       .subscribe(
-        (res:any) => {
+        (res: any) => {
         this.listDepartamentosYMunicipios = res;
         },
         err => console.log(err)
@@ -52,10 +56,10 @@ export class DemandaJuridicaComponent implements OnInit {
   log( checked ){
 
     if( checked ){
-      console.log(this.formularioJuridica.value);
-      console.log(this.formularioRepresentante.value);
+      console.log(this.formularioJuridica.value.razonSocial);
+      console.log(this.formularioRepresentante);
     }else{
-      console.log(this.formularioJuridica.value);
+      console.log(this.formularioJuridica.value.razonSocial);
     }
 
 
