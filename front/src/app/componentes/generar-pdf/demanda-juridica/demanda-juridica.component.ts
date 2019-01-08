@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import { DepartamentosMunicipiosService } from '../../../services/departamentos-municipios/departamentos-municipios.service';
 import { CedulaUsuarioService } from '../../../services/cedula-usuario.service';
+import { DemandadojuridicoService } from '../../../services/demandadoJuridico/demandadojuridico.service';
 
 @Component({
   selector: 'app-demanda-juridica',
@@ -18,8 +19,8 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
   // public listadoDepartamentos: any[] = [];
   // public listDepartamentosYMunicipios: any[];
 
-  constructor(private formBuilder: FormBuilder, private departamentosMunicipiosService: DepartamentosMunicipiosService, 
-    public cedulaUsuarioService: CedulaUsuarioService ) {
+  constructor(private formBuilder: FormBuilder, private departamentosMunicipiosService: DepartamentosMunicipiosService,
+    public cedulaUsuarioService: CedulaUsuarioService, private demandadojuridicoService: DemandadojuridicoService ) {
 
     this.formularioJuridica = this.formBuilder.group({
       'razonSocial':  [null, Validators.required],
@@ -36,7 +37,7 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
   }
 
   ngAfterContentChecked(): void {
-   console.log(this.formularioJuridica.value);
+   console.log(this.formularioJuridica.value.razonSocial);
    console.log(this.cedulaUsuarioService.obtenerCedual());
 
   }
@@ -74,7 +75,29 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
       console.log(this.formularioJuridica.value.razonSocial);
     }**/
 
-    
+    let urlDemandoInsert = 'https://laborappi.herokuapp.com/api/laborapp/demandado/guardar/empresa';
+
+    const objetoDemandadoJuridico = {
+
+      NItEmpresa: this.formularioJuridica.value.nit,
+      nombreEmpresaRS: this.formularioJuridica.value.razonSocial,
+      telefonoEmpresa: this.formularioJuridica.value.telefono ,
+      emailEmpresa: this.formularioJuridica.value.email,
+      direccionEmpresa: this.formularioJuridica.value.ubicacion.direccion,
+      codigoDaneMunicipio: 90
+
+    };
+
+    this.demandadojuridicoService.enviarDemandadoJuridico(urlDemandoInsert, objetoDemandadoJuridico).subscribe(
+      res => {
+        console.log(res);
+        // this.getGames();
+      },
+      err => console.error(err)
+);
+
+
+
 
   }
 
