@@ -4,13 +4,14 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { DepartamentosMunicipiosService } from '../../../services/departamentos-municipios/departamentos-municipios.service';
 import { CedulaUsuarioService } from '../../../services/cedula-usuario.service';
 import { DemandadojuridicoService } from '../../../services/demandadoJuridico/demandadojuridico.service';
+import { DemandaPdfService } from '../../../services/demandaPdf/demanda-pdf.service'
 
 @Component({
   selector: 'app-demanda-juridica',
   templateUrl: './demanda-juridica.component.html',
   styleUrls: ['./demanda-juridica.component.css']
 })
-export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
+export class DemandaJuridicaComponent implements OnInit  /*,AfterContentChecked*/ {
 
   formularioJuridica: FormGroup;
 
@@ -19,8 +20,12 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
   // public listadoDepartamentos: any[] = [];
   // public listDepartamentosYMunicipios: any[];
 
-  constructor(private formBuilder: FormBuilder, private departamentosMunicipiosService: DepartamentosMunicipiosService,
-    public cedulaUsuarioService: CedulaUsuarioService, private demandadojuridicoService: DemandadojuridicoService ) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private departamentosMunicipiosService: DepartamentosMunicipiosService,
+    public cedulaUsuarioService: CedulaUsuarioService,
+    private demandadojuridicoService: DemandadojuridicoService,
+    private demandaPdfService: DemandaPdfService  ) {
 
     this.formularioJuridica = this.formBuilder.group({
       'razonSocial':  [null, Validators.required],
@@ -36,11 +41,11 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
 
   }
 
-  ngAfterContentChecked(): void {
-   console.log(this.formularioJuridica.value.razonSocial);
-   console.log(this.cedulaUsuarioService.obtenerCedual());
-
-  }
+  // ngAfterContentChecked(): void {
+  //  console.log(this.formularioJuridica.value.razonSocial);
+  //  console.log(this.cedulaUsuarioService.obtenerCedual());
+  //
+  // }
   ngOnInit() {
 
 
@@ -91,7 +96,34 @@ export class DemandaJuridicaComponent implements OnInit,  AfterContentChecked {
     this.demandadojuridicoService.enviarDemandadoJuridico(urlDemandoInsert, objetoDemandadoJuridico).subscribe(
       res => {
         console.log(res);
-        // this.getGames();
+        const nit = this.formularioJuridica.value.nit;
+        const cedula = this.cedulaUsuarioService.obtenerCedual();
+        this.cedulaUsuarioService.resetCedual();
+        this.demandaPdfService.generarPdf(nit, cedula)
+          .subscribe(
+            res => {
+              console.log(res);
+            },
+            err => {
+              console.log(err);
+            }
+          )
+        this.demandaPdfService.descargarPdf(cedula)
+          .subscribe(
+            res => {
+              console.log(res);
+            },
+            err => {
+              console.log(err)
+            })
+        // this.demandaPdfService.enviarPdf(cedula)
+        //   .subscribe(
+        //     res => {
+        //       console.log(res);
+        //     },
+        //     err => {
+        //       console.log(err);
+        //     })
       },
       err => console.error(err)
 );

@@ -33,7 +33,6 @@ import { UsuariosService } from './services/usuarios.service';
 import { DepartamentosMunicipiosService } from './services/departamentos-municipios/departamentos-municipios.service';
 
 import { DemandadojuridicoService } from './services/demandadoJuridico/demandadojuridico.service';
-
 import { DemandaPdfService } from './services/demandaPdf/demanda-pdf.service';
 
 

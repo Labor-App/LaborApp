@@ -19,13 +19,13 @@ export class DemandaPdfService {
 
   enviarPdf(cedula){
 
-    return this.http.get(`${ this.URL }/generar/${ cedula }`)
+    return this.http.get(`${ this.URL }/enviar/${ cedula }`)
 
   }
 
   descargarPdf(cedula){
 
-    return this.http.get(`${ this.URL }/generar/${ cedula }`)
+    return this.http.get(`${ this.URL }/descargar/${ cedula }`)
 
   }
 

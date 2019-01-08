@@ -17,4 +17,7 @@ export class CedulaUsuarioService {
 
 
   }
+  resetCedual(): any {
+    this.cedula = undefined;
+  }
 }
