@@ -31,6 +31,7 @@ import { CorreoContraComponent } from './componentes/sign-up/correo-contra/corre
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosService } from './services/usuarios.service';
 import { DepartamentosMunicipiosService } from './services/departamentos-municipios/departamentos-municipios.service';
+import { DemandaPdfService } from './services/demandaPdf/demanda-pdf.service';
 
 
 @NgModule({
@@ -59,7 +60,7 @@ import { DepartamentosMunicipiosService } from './services/departamentos-municip
 
 
   ],
-  providers: [UsuariosService, DepartamentosMunicipiosService],
+  providers: [UsuariosService, DepartamentosMunicipiosService, DemandaPdfService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
