@@ -36,12 +36,14 @@
 
         <mat-form-field class="half-width">
           <mat-select placeholder="Departamento" formControlName="departamento" required>
-            <mat-option *ngFor="let dYM of listDepartamentosYMunicipios"  value="{{ dYM.departamento }}">{{ dYM.departamento }}</mat-option>
+            <!-- <mat-option *ngFor="let d of listadoDepartamentos"  value="{{ d.departamento }}">{{ d.departamento }}</mat-option> -->
+            <mat-option value="opcion">Opcion</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field class="half-width">
           <mat-select placeholder="Municipio" formControlName="municipio" required>
-            <mat-option *ngFor="let dYM of listDepartamentosYMunicipios"  value="{{ dYM.municipio }}">{{ dYM.municipio }}</mat-option>
+            <!-- <mat-option *ngFor="let dYM of listDepartamentosYMunicipios"  value="{{ dYM.municipio }}">{{ dYM.municipio }}</mat-option> -->
+            <mat-option value="opcion">Opcion</mat-option>
           </mat-select>
         </mat-form-field>
 
