@@ -10,16 +10,16 @@ export class DemandaPdfService {
 
   private URL = 'https://laborappi.herokuapp.com/api/laborapp/demanda';
 
-  generarPdf(nit, cedula){
+  generarPdf(nit, cedula) {
 
-    return this.http.get(`${ this.URL }/generar/${ nit }/${ cedula }`)
+    return this.http.get(`${ this.URL }/generar/${ nit }/${ cedula }`);
 
   }
 
 
-  enviarPdf(cedula){
+  enviarPdf(cedula) {
 
-    return this.http.get(`${ this.URL }/enviar/${ cedula }`)
+    return this.http.get(`${ this.URL }/enviar/${ cedula }`);
 
   }
 
