@@ -1,4 +1,4 @@
-import { Component, OnInit,  AfterContentChecked } from '@angular/core';
+import { Component, OnInit,  AfterContentChecked} from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import { DepartamentosMunicipiosService } from '../../../services/departamentos-municipios/departamentos-municipios.service';
@@ -17,8 +17,7 @@ export class DemandaJuridicaComponent implements OnInit  /*,AfterContentChecked*
 
   formularioRepresentante: FormGroup = this.formularioJuridica;
 
-  // public listadoDepartamentos: any[] = [];
-  // public listDepartamentosYMunicipios: any[];
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -49,25 +48,18 @@ export class DemandaJuridicaComponent implements OnInit  /*,AfterContentChecked*
   ngOnInit() {
 
 
-    // this.departamentosMunicipiosService.getMunicipios()
-    //   .subscribe(
-    //     (res:any) => {
-    //       this.listDepartamentosYMunicipios = res;
-    //
-    //       for(let dYM of this.listDepartamentosYMunicipios){
-    //         this.listadoDepartamentos.push(dYM.departamento)
-    //       }
-    //       console.log(this.listadoDepartamentos)
-    //
-    //     },
-    //     err => console.log(err)
-    //   )
 
 
   }
 
   eventoHijoFormulario(e){
     this.formularioRepresentante = e;
+  }
+
+
+  go(checked ) {
+    this.log(checked );
+    window.location.href='https://laborappi.herokuapp.com/api/laborapp/demanda/descargar/784333';
   }
 
 
@@ -98,7 +90,7 @@ export class DemandaJuridicaComponent implements OnInit  /*,AfterContentChecked*
         console.log(res);
         const nit = this.formularioJuridica.value.nit;
         const cedula = this.cedulaUsuarioService.obtenerCedual();
-        this.cedulaUsuarioService.resetCedual();
+
         this.demandaPdfService.generarPdf(nit, cedula)
           .subscribe(
             res => {
@@ -108,30 +100,43 @@ export class DemandaJuridicaComponent implements OnInit  /*,AfterContentChecked*
               console.log(err);
             }
           )
-        this.demandaPdfService.descargarPdf(cedula)
+
+        this.demandaPdfService.enviarPdf(cedula)
           .subscribe(
             res => {
               console.log(res);
+              window.location.href='https://laborappi.herokuapp.com/api/laborapp/demanda/descargar/784333';
             },
             err => {
-              console.log(err)
+              console.log(err);
             })
-        // this.demandaPdfService.enviarPdf(cedula)
-        //   .subscribe(
-        //     res => {
-        //       console.log(res);
-        //     },
-        //     err => {
-        //       console.log(err);
-        //     })
       },
       err => console.error(err)
-);
+    );
 
 
 
 
   }
+
+
+  descargar(){
+    const cedula = this.cedulaUsuarioService.obtenerCedual();
+    this.demandaPdfService.descargarPdf(cedula)
+      .subscribe(
+        (res:any) => {
+          console.log(res);
+          return res.url;
+        },
+        err => {
+          console.log(err)
+        })
+
+
+  }
+
+
+
 
   verificar( cheked ){
     if( cheked && (!this.formularioJuridica.valid || !this.formularioRepresentante.valid)){

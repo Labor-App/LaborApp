@@ -89,11 +89,19 @@
     </app-representante>
 
 
-
+<!-- 
   <button mat-flat-button class="btn"
 
-    type="submit"
+      type="submit"
+      [disabled]="verificar(representante.checked)"
+
+    ><a href="https://laborappi.herokuapp.com/api/laborapp/demanda/descargar/784333">Continuar</a>
+  </button> -->
+  <a mat-flat-button class="btn"
+
+    (click)="log(representante.checked)"
     [disabled]="verificar(representante.checked)"
 
-  >Continuar</button>
+  >Continuar</a>
+
 </form>
