@@ -1,46 +1,58 @@
 <div class="sign-in-container">
 
 
-    <div class="img-container">
-      <img src="./assets/img/logo.png" alt="Logo Laborapp">
-    </div>
+  <div class="img-container">
+    <img src="./assets/img/logo.png" alt="Logo Laborapp">
+  </div>
 
 
-      <form >
+  <form [formGroup]="formularioSignIn">
 
-        <!-- <h3 class="mat-subheading-2">Inicio de secion:</h3> -->
-        <h5 class="parrafo">Por favor, inicie sesión con su cuenta</h5>
+    <h5 class="parrafo">Por favor, inicie sesión con su cuenta</h5>
 
-        <mat-card class="card">
+    <mat-card class="card">
 
-        <mat-form-field class="inputs">
-          <input matInput placeholder="Correo" [formControl]="emailFormControl"
-          [errorStateMatcher]="matcher" required>
-          <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
-          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-            Correo Invalido!
-          </mat-error>
-          <mat-error *ngIf="emailFormControl.hasError('required')">
-            El correo es <strong>requerido</strong>
-          </mat-error>
-        </mat-form-field>
+      <mat-form-field class="inputs">
+        <input matInput
+        placeholder="Email"
+        formControlName="email"
+        required>
+        <mat-error *ngIf="formularioSignIn.get('email').invalid">
+          {{getErrorMessage()}}
+        </mat-error>
+      </mat-form-field>
 
-        <mat-form-field class="inputs">
-          <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" required>
-          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </mat-form-field>
+      <mat-form-field class="inputs">
+        <input matInput
+          placeholder="Contraseña"
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+          required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
 
-        <div class="link">
-          <a mat-button routerLink=".">Olvidé mi contraseña</a>
+      <div class="link">
+        <a mat-button
+          routerLink=".">
+          Olvidé mi contraseña
+        </a>
 
-          <a mat-button routerLink="/signup">Crear cuenta</a>
-        </div>
+        <a mat-button
+          routerLink="/signup">
+          Crear cuenta
+        </a>
+      </div>
 
-      </mat-card>
+    </mat-card>
 
 
-        <button mat-flat-button (click)="openSnackBar()" class="btn" routerLink=".">Entrar</button>
-      </form>
+    <button mat-flat-button
+      class="btn"
+      (click)="openSnackBar()">
+      Entrar
+    </button>
+
+  </form>
 
 
 </div>

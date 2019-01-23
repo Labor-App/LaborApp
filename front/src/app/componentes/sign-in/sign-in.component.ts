@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //Forms
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { FormBuilder, FormGroup ,Validators } from '@angular/forms';
 
 //SnackBar
 import {MatSnackBar} from '@angular/material';
@@ -15,13 +14,26 @@ import {MatSnackBar} from '@angular/material';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(public snackBar: MatSnackBar) { }
+  formularioSignIn: FormGroup;
+  //Password
+  hide = true;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    public snackBar: MatSnackBar ) {
+
+      this.formularioSignIn = this.formBuilder.group({
+        'email': [null, Validators.compose([Validators.required, Validators.email])],
+        'password': [null, Validators.required]
+      });
+
+  }
 
   ngOnInit() {
   }
+
+
   //MatSnackBar
- 
- 
   openSnackBar() {
     this.snackBar.open('Credenciales incorrectas', '', {
       duration: 2500,
@@ -29,20 +41,13 @@ export class SignInComponent implements OnInit {
   }
 
   //Email
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-    }
+  getErrorMessage() {
+    return this.formularioSignIn.get('email').hasError('required') ? 'Introduzca un email' :
+          this.formularioSignIn.get('email').hasError('email') ? 'Email no vaildo' : '';
+  }
 
-  emailFormControl = new FormControl('', [
-   Validators.required,
-   Validators.email,
-  ]);
 
-  matcher = new ErrorStateMatcher();
 
-  //Password
-  hide = true;
 
 
 

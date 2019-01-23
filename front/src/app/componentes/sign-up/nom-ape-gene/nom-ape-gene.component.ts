@@ -16,10 +16,6 @@ export class NomApeGeneComponent implements OnInit {
 
 apellidoNombre: FormGroup;
 
-nombreUsuario: string;
-apellidoUsuario: String;
-ciudadUsuario: String;
-
 
   constructor(formBuilder: FormBuilder) {
     this.apellidoNombre = formBuilder.group({
@@ -35,27 +31,22 @@ ciudadUsuario: String;
   ngOnInit() {
   }
 
-clickBtnSiguiente(): void {
-const Btn_Acti_nombreApeVisual = true;
+  clickBtnSiguiente(): void {
+    const Btn_Acti_nombreApeVisual = true;
 
-const infoComp: object = {
-nombreUs: this.nombreUsuario,
-apellidoUs: this.apellidoUsuario,
-ciudadUs: this.ciudadUsuario,
-Btn_Acti_nombreApeVisual: true
-};
-
-
-
-this.Btn_nombreApeVisual.emit(infoComp);
-// es un método del evento que se esta creando
-
-console.log(this.nombreUsuario);
-console.log(this.apellidoUsuario);
-console.log(this.ciudadUsuario);
+    const infoComp: object = {
+    nombreUs: this.apellidoNombre.value.nombre,
+    apellidoUs: this.apellidoNombre.value.apellido,
+    ciudadUs: this.apellidoNombre.value.ciudadResiden,
+    Btn_Acti_nombreApeVisual: true
+    };
 
 
-}
+
+    this.Btn_nombreApeVisual.emit(infoComp);
+    // es un método del evento que se esta creando
+
+  }
 
 
 

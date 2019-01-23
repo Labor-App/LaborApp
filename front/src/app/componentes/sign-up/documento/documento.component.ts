@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
-// Se importan los modulos para hacer la validación en los formularios. 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+// Se importan los modulos para hacer la validación en los formularios.
 
 
 @Component({
@@ -12,9 +12,7 @@ export class DocumentoComponent implements OnInit {
 
   @Output() Btn_documentoIden = new EventEmitter();
   documento: FormGroup;
-  generoUs: string;
-  cedulaUs: number;
-  lugarCedulaUs: string;
+
 
   constructor(formBuilder: FormBuilder) {
     // Se instancia la clase FormBuilder en el constructor
@@ -34,9 +32,9 @@ export class DocumentoComponent implements OnInit {
 
     const infoCompDocumento: Object = {
       Btn_Acti_documento: true,
-      generoUsuario: this.generoUs,
-      cedulaUsuario: this.cedulaUs,
-      lugarUsuario: this.lugarCedulaUs
+      generoUsuario: this.documento.value.genero,
+      cedulaUsuario: this.documento.value.cedula,
+      lugarUsuario: this.documento.value.lugarCedula
     };
 
 

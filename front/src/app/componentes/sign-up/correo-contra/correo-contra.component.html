@@ -1,36 +1,67 @@
 <div class="signup-container">
 
-    
-    
+
+
     <form [formGroup]="correoContrasenaForm">
 
     <h5 class="parrafo">Correo y contraseña</h5>
+
     <mat-card class="card">
-      
 
-        <mat-form-field class="inputs full-width" >
-            <input matInput placeholder="Ingrese su email"   formControlName="correo" required [(ngModel)]="correoUs">
-            <!--<mat-error *ngIf="correo.invalid">{{getErrorMessage()}}</mat-error>-->
-          </mat-form-field>
-        
+
+      <mat-form-field class="inputs full-width correo" >
+        <input matInput
+          placeholder="Ingrese su email"
+          formControlName="correo"
+          required >
+        <mat-error
+         *ngIf="correoContrasenaForm.get('correo').invalid">
+          {{ getErrorMessage() }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="inputs full-width">
+          <input matInput
+            #key
+            placeholder="Contraseña"
+            [type]="hide ? 'password' : 'text'"
+            formControlName="key"
+            required >
+          <mat-icon matSuffix
+            (click)="hide = !hide">
+            {{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+        </mat-form-field>
+
         <mat-form-field class="inputs full-width">
-            <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="key" required [(ngModel)]="keyUs">
-            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </mat-form-field>
+          <input matInput
+            #keyAgain
+            placeholder="Confirme contraseña"
+            [type]="hide ? 'password' : 'text'"
+            formControlName="keyAgain"
+            required >
+          <mat-icon matSuffix
+            (click)="hide = !hide">
+            {{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+        </mat-form-field>
 
-          <mat-form-field class="inputs full-width">
-            <input matInput placeholder="Confirme contraseña" [type]="hide ? 'password' : 'text'" formControlName="keyAgain" required [(ngModel)]="againKeyUs">
-            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </mat-form-field>
-
-         
+        <mat-error
+         *ngIf="key.value != keyAgain.value">
+          Las contraseñas no coniciden
+        </mat-error>
 
 
+      </mat-card>
 
-        </mat-card>
+      <button mat-flat-button
+        class="btn"
+        (click)="correoContrase_clickBtnSiguiente()" [disabled]="correoContrasenaForm.invalid || (key.value != keyAgain.value)" >
+        Siguiente
+      </button>
 
-        <button mat-flat-button class="btn" routerLink="/pdf" (click)="correoContrase_clickBtnSiguiente()" [disabled]="correoContrasenaForm.invalid" >Siguiente</button>
+
     </form>
-    
+
 
 </div>

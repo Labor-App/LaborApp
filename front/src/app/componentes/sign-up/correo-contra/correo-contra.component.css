@@ -16,15 +16,17 @@
 	flex-direction: column;
 }
 
-
-
 .parrafo{
-    font-family: "Roboto", sans-serif;
-    font-size: 2rem;
-    color:rgb(33, 150, 243);
-    justify-content: center;
-    font-weight: normal;
-    text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color:rgb(33, 150, 243);
+  justify-content: center;
+  font-weight: normal;
+  text-align: center;
+}
+
+.correo{
+	margin-bottom: 0.5rem
 }
 
 
