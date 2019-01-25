@@ -21,7 +21,7 @@ import { DemandaNaturalComponent } from './datos-demandado/demanda-natural/deman
     DemandaJuridicaComponent,
     DemandaNaturalComponent,
     RepresentanteComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     CommonModule,
@@ -30,5 +30,12 @@ import { DemandaNaturalComponent } from './datos-demandado/demanda-natural/deman
     FormsModule,
     ReactiveFormsModule,
   ],
+  exports: [
+    DatosDemandadoComponent,
+    DemandaJuridicaComponent,
+    DemandaNaturalComponent,
+    RepresentanteComponent,
+    NavBarComponent,
+  ]
 })
 export class DemandaModule { }

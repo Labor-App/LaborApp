@@ -16,12 +16,14 @@ import { NomApeGeneComponent } from './componentes/sign-up/nom-ape-gene/nom-ape-
 import { DocumentoComponent } from './componentes/sign-up/documento/documento.component';
 import { FechaNacimientoComponent } from './componentes/sign-up/fecha-nacimiento/fecha-nacimiento.component';
 import { CorreoContraComponent } from './componentes/sign-up/correo-contra/correo-contra.component';
+import { DemandaComponent } from './componentes/demanda/demanda.component';
 
 // servicios
 import { UsuariosService } from './services/usuario/usuarios.service';
 import { DepartamentosMunicipiosService } from './services/departamentos-municipios/departamentos-municipios.service';
 import { DemandadojuridicoService } from './services/demandadoJuridico/demandadojuridico.service';
 import { DemandaPdfService } from './services/demandaPdf/demanda-pdf.service';
+
 
 
 
@@ -34,6 +36,7 @@ import { DemandaPdfService } from './services/demandaPdf/demanda-pdf.service';
     DocumentoComponent,
     FechaNacimientoComponent,
     CorreoContraComponent,
+    DemandaComponent,
   ],
   imports: [
     AppRoutingModule,

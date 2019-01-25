@@ -5,7 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { DatosDemandadoComponent } from './datos-demandado/datos-demandado.component';
 
 const routes: Routes = [
-  { path: '', component: DatosDemandadoComponent }
+  { path: '', component: DatosDemandadoComponent},
+  { path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({
