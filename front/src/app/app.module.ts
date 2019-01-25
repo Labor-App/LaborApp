@@ -23,6 +23,8 @@ import { UsuariosService } from './services/usuario/usuarios.service';
 import { DepartamentosMunicipiosService } from './services/departamentos-municipios/departamentos-municipios.service';
 import { DemandadojuridicoService } from './services/demandadoJuridico/demandadojuridico.service';
 import { DemandaPdfService } from './services/demandaPdf/demanda-pdf.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -45,6 +47,7 @@ import { DemandaPdfService } from './services/demandaPdf/demanda-pdf.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ServiceWorkerModule.register(/*'ngsw-worker.js'*/'sw.js', { enabled: environment.production }),
 
 
   ],

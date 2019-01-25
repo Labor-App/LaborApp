@@ -376,6 +376,9 @@ THE SOFTWARE.
 
 @angular/material/bottom-sheet
 
+@angular/service-worker
+MIT
+
 @angular/material/datepicker
 
 zone.js
