@@ -5,18 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-//Material
+//Modulos Propios
 import { MaterialModule } from './material';
+import { FragmentosModule } from './fragmentos/fragmentos.module';
 
 //Components
 import { AppComponent } from './app.component';
-import { SignInComponent } from './componentes/sign-in/sign-in.component';
-import { SignUpComponent } from './componentes/sign-up/sign-up.component';
-import { NomApeGeneComponent } from './componentes/sign-up/nom-ape-gene/nom-ape-gene.component';
-import { DocumentoComponent } from './componentes/sign-up/documento/documento.component';
-import { FechaNacimientoComponent } from './componentes/sign-up/fecha-nacimiento/fecha-nacimiento.component';
-import { CorreoContraComponent } from './componentes/sign-up/correo-contra/correo-contra.component';
-import { DemandaComponent } from './componentes/demanda/demanda.component';
+import { SignInComponent } from './paginas/sign-in/sign-in.component';
+import { SignUpComponent } from './paginas/sign-up/sign-up.component';
+import { UsuarioComponent } from './paginas/usuario/usuario.component';
+
+import { NomApeGeneComponent } from './paginas/sign-up/nom-ape-gene/nom-ape-gene.component';
+import { DocumentoComponent } from './paginas/sign-up/documento/documento.component';
+import { FechaNacimientoComponent } from './paginas/sign-up/fecha-nacimiento/fecha-nacimiento.component';
+import { CorreoContraComponent } from './paginas/sign-up/correo-contra/correo-contra.component';
 
 // servicios
 import { UsuariosService } from './services/usuario/usuarios.service';
@@ -24,8 +26,8 @@ import { DepartamentosMunicipiosService } from './services/departamentos-municip
 import { DemandadojuridicoService } from './services/demandadoJuridico/demandadojuridico.service';
 import { DemandaPdfService } from './services/demandaPdf/demanda-pdf.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 
+import { environment } from '../environments/environment';
 
 
 
@@ -38,12 +40,13 @@ import { environment } from '../environments/environment';
     DocumentoComponent,
     FechaNacimientoComponent,
     CorreoContraComponent,
-    DemandaComponent,
+    UsuarioComponent,
   ],
   imports: [
     AppRoutingModule,
-    BrowserAnimationsModule,
     MaterialModule,
+    FragmentosModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

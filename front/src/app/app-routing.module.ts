@@ -4,23 +4,24 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 // component
-import { SignInComponent } from './componentes/sign-in/sign-in.component';
-import { SignUpComponent } from './componentes/sign-up/sign-up.component';
-import { DemandaComponent } from './componentes/demanda/demanda.component';
+import { SignInComponent } from './paginas/sign-in/sign-in.component';
+import { SignUpComponent } from './paginas/sign-up/sign-up.component';
+import { UsuarioComponent } from './paginas/usuario/usuario.component';
 
 const routes: Routes = [
-  {path: '', component: SignInComponent},
-  {
-    path: 'demanda',
-    component: DemandaComponent,
-    loadChildren: './componentes/demanda/demanda.module#DemandaModule'
-  },
+  {path: 'login', component: SignInComponent},
   {path: 'signup', component: SignUpComponent},
-  {path: '**', redirectTo: '', pathMatch: 'full'}
+  {
+    path: 'usuario',
+    component: UsuarioComponent,
+    loadChildren: './paginas/usuario/usuario.module#UsuarioModule'
+  },
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, /*{useHash: true}*/)],
+  imports: [RouterModule.forRoot(routes/*, {useHash: true}*/)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -7,6 +7,10 @@
 	box-sizing: border-box;
 	font-size: 16px;
 	font-family: 'Roboto',sans-serif;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-ms-user-select:none;
 }
 
 html,
@@ -17,6 +21,15 @@ body{
 body{
 	margin: 0;
 	padding: 0;
+}
+
+input,
+textarea{
+	user-select: text;
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-khtml-user-select: text;
+	-ms-user-select: text;
 }
 
 
@@ -46,6 +59,7 @@ body{
 .btn{
 	background: #1899fc;
 	color: #fff;
+	margin-bottom: 2rem !important;
 }
 
 .card{
