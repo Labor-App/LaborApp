@@ -1,4 +1,4 @@
-<form [formGroup]="formularioJuridica" class="full-width" (ngSubmit)="log(representante.checked)">
+<form [formGroup]="formularioJuridica" class="full-width" (ngSubmit)="correrPrueba()">
 
     <div class="full-width nombre-inputs">
       <mat-form-field class="half-width">
@@ -98,19 +98,17 @@
     </app-representante>
 
 
-<!--
+
   <button mat-flat-button class="btn"
-
-      type="submit"
-      [disabled]="verificar(representante.checked)"
-
-    ><a href="https://laborappi.herokuapp.com/api/laborapp/demanda/descargar/784333">Continuar</a>
-  </button> -->
-  <a mat-flat-button class="btn"
+    type="submit"
+    [disabled]="verificar(representante.checked)">
+    Continuar
+  </button>
+  <!-- <a mat-flat-button class="btn"
 
     (click)="log(representante.checked)"
     [disabled]="verificar(representante.checked)"
 
-  >Continuar</a>
+  >Continuar</a> -->
 
 </form>

@@ -20,13 +20,11 @@ import { DocumentoComponent } from './paginas/sign-up/documento/documento.compon
 import { FechaNacimientoComponent } from './paginas/sign-up/fecha-nacimiento/fecha-nacimiento.component';
 import { CorreoContraComponent } from './paginas/sign-up/correo-contra/correo-contra.component';
 
-// servicios
-import { UsuariosService } from './services/usuario/usuarios.service';
-import { DepartamentosMunicipiosService } from './services/departamentos-municipios/departamentos-municipios.service';
-import { DemandadojuridicoService } from './services/demandadoJuridico/demandadojuridico.service';
-import { DemandaPdfService } from './services/demandaPdf/demanda-pdf.service';
-import { ServiceWorkerModule } from '@angular/service-worker';
+//servicios
+import { ServiceModule } from './services/service.module';
 
+
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 
@@ -50,12 +48,13 @@ import { environment } from '../environments/environment';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ServiceModule,
     ServiceWorkerModule.register(/*'ngsw-worker.js'*/'sw.js', { enabled: environment.production }),
 
 
   ],
 
-  providers: [UsuariosService, DepartamentosMunicipiosService, DemandadojuridicoService, DemandaPdfService ],
+  providers: [  ],
 
   bootstrap: [AppComponent]
 })

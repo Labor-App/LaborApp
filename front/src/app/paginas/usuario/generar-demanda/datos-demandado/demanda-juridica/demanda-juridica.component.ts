@@ -1,18 +1,17 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { saveAs } from 'file-saver';
 
 
-import { CedulaUsuarioService } from '../../../../../services/cedula-usuario/cedula-usuario.service';
-import { DemandadojuridicoService } from '../../../../../services/demandadoJuridico/demandadojuridico.service';
-import { DemandaPdfService } from '../../../../../services/demandaPdf/demanda-pdf.service'
+import { CedulaUsuarioService, DemandadoService, DemandaPdfService } from '../../../../../services/service.index';
 
 @Component({
   selector: 'app-demanda-juridica',
   templateUrl: './demanda-juridica.component.html',
   styleUrls: ['./demanda-juridica.component.css']
 })
-export class DemandaJuridicaComponent implements OnInit  {
+export class DemandaJuridicaComponent implements OnInit, AfterContentChecked  {
 
   formularioJuridica: FormGroup;
 
@@ -25,7 +24,7 @@ export class DemandaJuridicaComponent implements OnInit  {
     private router: Router,
     private activeRoute: ActivatedRoute,
     public cedulaUsuarioService: CedulaUsuarioService,
-    private demandadojuridicoService: DemandadojuridicoService,
+    private demandadoService: DemandadoService,
     private demandaPdfService: DemandaPdfService  ) {
 
     this.formularioJuridica = this.formBuilder.group({
@@ -45,23 +44,14 @@ export class DemandaJuridicaComponent implements OnInit  {
 
   ngOnInit() { }
 
+  ngAfterContentChecked(){ }
+
   eventoHijoFormulario(e){
     this.formularioRepresentante = e;
   }
 
-  log( checked ){
 
-
-    /*
-    if( checked ){
-      console.log(this.formularioJuridica.value.razonSocial);
-      console.log(this.formularioRepresentante);
-    }else{
-      console.log(this.formularioJuridica.value.razonSocial);
-    }
-    */
-
-    let urlDemandoInsert = 'https://laborappi.herokuapp.com/api/laborapp/demandado/guardar/empresa';
+  guardarDemandado(){
 
     const objetoDemandadoJuridico = {
 
@@ -74,58 +64,57 @@ export class DemandaJuridicaComponent implements OnInit  {
 
     };
 
-    this.demandadojuridicoService.enviarDemandadoJuridico(urlDemandoInsert, objetoDemandadoJuridico).subscribe(
-      res => {
-        console.log(res);
-        const nit = this.formularioJuridica.value.nit;
-        const cedula = this.cedulaUsuarioService.obtenerCedual();
 
-        this.demandaPdfService.generarPdf(nit, cedula)
-          .subscribe(
-            res => {
-              console.log(res);
-            },
-            err => {
-              console.log(err);
-            }
-          )
-
-        this.demandaPdfService.enviarPdf(cedula)
-          .subscribe(
-            res => {
-              console.log(res);
-              window.location.href='https://laborappi.herokuapp.com/api/laborapp/demanda/descargar/784333';
-              this.router.navigate(['./datos-contrato'],  { relativeTo: this.activeRoute} )
-            },
-            err => {
-              console.log(err);
-            })
-      },
-      err => console.error(err)
-    );
-
-
-
+    this.demandadoService.guardarDemandadoJuridico( objetoDemandadoJuridico )
+      .subscribe( async res => {
+          console.log(res)
+          await this.generarPdf();
+      })
 
   }
 
+  generarPdf(){
+    const nit = this.formularioJuridica.value.nit;
+    const cedula = this.cedulaUsuarioService.obtenerCedual();
+    this.demandaPdfService.generarPdf(nit, cedula)
+      .subscribe( async res => {
+        console.log(res);
+        await this.enviarPdf();
+      }, err => {
+        console.log(err)
+      })
+  }
 
-  descargar(){
+  enviarPdf(){
+    const cedula = this.cedulaUsuarioService.obtenerCedual();
+    this.demandaPdfService.enviarPdf(cedula)
+      .subscribe( res => {
+        console.log(res)
+      }, err => {
+        console.log(err)
+      })
+  }
+
+  descargarPdf(){
     const cedula = this.cedulaUsuarioService.obtenerCedual();
     this.demandaPdfService.descargarPdf(cedula)
-      .subscribe(
-        (res:any) => {
-          console.log(res);
-          return res.url;
-        },
-        err => {
-          console.log(err)
-        })
-
-
+      .subscribe( doc => {
+        saveAs( doc, 'demanda.pdf' )
+      }, err => {
+        console.log(err)
+      })
   }
 
 
+
+  public async correrPrueba(){
+
+    await this.guardarDemandado();
+    // await this.generarPdf();
+    // await this.enviarPdf();
+    //await this.descargarPdf();
+
+  }
 
 
   verificar( cheked ){

@@ -25,7 +25,7 @@ export class DemandaPdfService {
 
   descargarPdf(cedula){
 
-    return this.http.get(`${ this.URL }/descargar/${ cedula }`)
+    return this.http.get(`${ this.URL }/descargar/${ cedula }`, { responseType: 'blob' })
 
   }
 

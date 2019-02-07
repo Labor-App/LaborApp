@@ -7,7 +7,9 @@
     <mat-card class="card">
 
       <mat-form-field class="inputs full-width">
-        <input matInput
+        <input
+          matInput
+          (click)="picker.open()"
           [min]="minDate"
           [max]="maxDate"
           [matDatepicker]="picker"
@@ -15,7 +17,7 @@
           formControlName="nacimiento"
           required >
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker touchUi #picker></mat-datepicker>
       </mat-form-field>
 
     </mat-card>
