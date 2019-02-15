@@ -1,3 +1,4 @@
+export { LoginGuard } from './guards/login.guard';
 
 export { CedulaUsuarioService } from './cedula-usuario/cedula-usuario.service';
 export { DemandadoService } from './demandado/demandado.service';

@@ -67,27 +67,28 @@ export class DemandaJuridicaComponent implements OnInit, AfterContentChecked  {
 
     this.demandadoService.guardarDemandadoJuridico( objetoDemandadoJuridico )
       .subscribe( async res => {
-          console.log(res)
-          await this.generarPdf();
+
+        await this.generarPdf();
+
+
       })
 
   }
 
   generarPdf(){
     const nit = this.formularioJuridica.value.nit;
-    const cedula = this.cedulaUsuarioService.obtenerCedual();
-    this.demandaPdfService.generarPdf(nit, cedula)
+    this.demandaPdfService.generarPdf(nit)
       .subscribe( async res => {
         console.log(res);
         await this.enviarPdf();
+        await this.descargarPdf();
       }, err => {
         console.log(err)
       })
   }
 
   enviarPdf(){
-    const cedula = this.cedulaUsuarioService.obtenerCedual();
-    this.demandaPdfService.enviarPdf(cedula)
+    this.demandaPdfService.enviarPdf()
       .subscribe( res => {
         console.log(res)
       }, err => {
@@ -96,8 +97,7 @@ export class DemandaJuridicaComponent implements OnInit, AfterContentChecked  {
   }
 
   descargarPdf(){
-    const cedula = this.cedulaUsuarioService.obtenerCedual();
-    this.demandaPdfService.descargarPdf(cedula)
+    this.demandaPdfService.descargarPdf()
       .subscribe( doc => {
         saveAs( doc, 'demanda.pdf' )
       }, err => {

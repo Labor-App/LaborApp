@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup ,Validators } from '@angular/forms';
 
 //SnackBar
 import {MatSnackBar} from '@angular/material';
+import { UsuariosService } from 'src/app/services/service.index';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class SignInComponent implements OnInit {
   hide = true;
 
   constructor(
+    private usuarioService: UsuariosService,
     private formBuilder: FormBuilder,
     public snackBar: MatSnackBar,
     private router: Router) {
@@ -38,9 +40,30 @@ export class SignInComponent implements OnInit {
 
   //MatSnackBar
   openSnackBar() {
-    this.snackBar.open('Credenciales incorrectas', '', {
-      duration: 2500,
-    });
+    if( this.formularioSignIn.valid ){
+
+      this.usuarioService.loginUsuario(this.formularioSignIn.value)
+        .subscribe( (res: any) => {
+
+          if (res){
+
+            this.router.navigate(['/usuario'])
+
+          }else{
+
+            this.snackBar.open('Credenciales incorrectas', '', {
+              duration: 2500,
+            });
+          }
+
+        })
+    }else{
+
+      this.snackBar.open('Ingresaste un dato mal', '', {
+        duration: 2500,
+      });
+    }
+
   }
 
   //Email
