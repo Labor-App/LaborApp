@@ -1,10 +1,9 @@
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
 import { saveAs } from 'file-saver';
 
 
-import { CedulaUsuarioService, DemandadoService, DemandaPdfService } from '../../../../../services/service.index';
+import {  DemandadoService, DemandaPdfService } from '../../../../../services/service.index';
 
 @Component({
   selector: 'app-demanda-juridica',
@@ -21,9 +20,6 @@ export class DemandaJuridicaComponent implements OnInit, AfterContentChecked  {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
-    private activeRoute: ActivatedRoute,
-    public cedulaUsuarioService: CedulaUsuarioService,
     private demandadoService: DemandadoService,
     private demandaPdfService: DemandaPdfService  ) {
 

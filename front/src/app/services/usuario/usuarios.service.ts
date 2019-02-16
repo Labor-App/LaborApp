@@ -18,6 +18,19 @@ export class UsuariosService {
     this.refreshPage();
   }
 
+  renovarToken(){
+    return this.http.post(`${this.URL}/renuevaToken`, null, {headers: new HttpHeaders({ 'token': `${this.token}`})})
+      .pipe(
+
+        map( (res: any) => {
+          this.token = res.token;
+          this.guardarEnStorage(res.token)
+          return true;
+        })
+      )
+
+  }
+
   estaLogeado(){
     return (this.token.length > 5 ) ? true : false;
   }
@@ -33,13 +46,30 @@ export class UsuariosService {
     }
   }
 
-  guardarEnStorage(id: string, token: string, usuario: Usuario){
-    localStorage.setItem('id', id);
-    localStorage.setItem('token', token);
-    localStorage.setItem('usuario', JSON.stringify( usuario ));
+  guardarEnStorage(token: string, id?: string, usuario?: Usuario ){
 
-    this.usuario = usuario;
+    if( id === undefined && usuario === undefined ){
+      console.log('opcion 1')
+      localStorage.setItem('token', token);
+    }else if( id === undefined ){
+      console.log('opcion 2')
+      localStorage.setItem('token', token);
+      localStorage.setItem('usuario', JSON.stringify( usuario ));
+      this.usuario = usuario;
+    }else if( usuario === undefined ){
+      console.log('opcion 2')
+      localStorage.setItem('token', token);
+      localStorage.setItem('id', id);
+    }else{
+      localStorage.setItem('id', id);
+      localStorage.setItem('token', token);
+      localStorage.setItem('usuario', JSON.stringify( usuario ));
+      this.usuario = usuario;
+    }
+
+
     this.token = token;
+
   }
 
   logoutUsuario(){
@@ -47,6 +77,7 @@ export class UsuariosService {
     this.usuario = null;
     localStorage.removeItem('token');
     localStorage.removeItem('usuario');
+    localStorage.removeItem('id');
     this.router.navigate(['/login']);
   }
 
@@ -59,7 +90,7 @@ export class UsuariosService {
             return false;
           }
 
-          this.guardarEnStorage(res.usuario.correoPersona, res.token, res.usuario);
+          this.guardarEnStorage( res.token, res.usuario.correoPersona, res.usuario);
           return true;
 
         })

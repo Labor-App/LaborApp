@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup ,Validators } from '@angular/forms';
 
 //SnackBar
 import {MatSnackBar} from '@angular/material';
-import { UsuariosService } from 'src/app/services/service.index';
+import { UsuariosService } from '../../services/service.index';
 
 
 @Component({
@@ -32,9 +32,14 @@ export class SignInComponent implements OnInit {
         'password': [null, Validators.required]
       });
 
+      if(this.usuarioService.estaLogeado()){
+        this.router.navigate(['/usuario'])
+      }
   }
 
   ngOnInit() {
+
+
   }
 
 

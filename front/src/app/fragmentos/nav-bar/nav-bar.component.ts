@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
-import { UsuariosService } from 'src/app/services/service.index';
+import { UsuariosService } from '../../services/service.index';
 
 @Component({
   selector: 'app-nav-bar',

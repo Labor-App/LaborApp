@@ -10,7 +10,7 @@ import { DatosContratoComponent } from './generar-demanda/datos-contrato/datos-c
 
 const routes: Routes = [
 
-  { path: 'home', component: HomeComponent },
+  { path: 'home',component: HomeComponent },
   { path: 'perfil/:id', component: PerfilComponent },
   {
 

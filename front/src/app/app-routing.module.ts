@@ -7,14 +7,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './paginas/sign-in/sign-in.component';
 import { SignUpComponent } from './paginas/sign-up/sign-up.component';
 import { UsuarioComponent } from './paginas/usuario/usuario.component';
-import { LoginGuard } from './services/service.index';
+import { LoginGuard, VerificarTokenGuard } from './services/service.index';
 
 const routes: Routes = [
-  {path: 'login', component: SignInComponent},
+  {
+    path: 'login',
+    component: SignInComponent
+  },
   {path: 'signup', component: SignUpComponent},
   {
     path: 'usuario',
-    canActivate: [ LoginGuard ],
+    canLoad: [ LoginGuard ],
+    canActivateChild: [ VerificarTokenGuard ],
     component: UsuarioComponent,
     loadChildren: './paginas/usuario/usuario.module#UsuarioModule'
   },
@@ -23,7 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes/*, {useHash: true}*/)],
+  imports: [RouterModule.forRoot(routes, {enableTracing: true}/*, {useHash: true}*/)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
