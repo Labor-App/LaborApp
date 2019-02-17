@@ -7,7 +7,7 @@ import {MatSnackBar} from '@angular/material';
 //Modelos
 import { Usuario } from '../../models/Usuario';
 //Servicios
-import { UsuariosService } from '../../services/service.index';
+import { UsuariosService} from '../../services/service.index';
 
 
 
@@ -28,10 +28,11 @@ export class SignUpComponent implements OnInit {
   datosForm4: any;
 
 
+
  constructor(
    private usuariosService: UsuariosService,
    public router: Router,
-  public snackBar: MatSnackBar) {}
+   public snackBar: MatSnackBar) {}
 
 
   ngOnInit() {}

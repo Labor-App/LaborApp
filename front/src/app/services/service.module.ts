@@ -23,7 +23,7 @@ import {
     UsuariosService,
     DepartamentosMunicipiosService,
     LoginGuard,
-    VerificarTokenGuard
+    VerificarTokenGuard,
   ]
 })
 export class ServiceModule { }
