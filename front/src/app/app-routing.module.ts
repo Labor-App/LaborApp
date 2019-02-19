@@ -12,9 +12,14 @@ import { LoginGuard, VerificarTokenGuard } from './services/service.index';
 const routes: Routes = [
   {
     path: 'login',
-    component: SignInComponent
+    component: SignInComponent,
+    data: { animation: 'login' }
   },
-  {path: 'signup', component: SignUpComponent},
+  {
+    path: 'signup',
+    component: SignUpComponent,
+    data: { animation: 'isRight' }
+  },
   {
     path: 'usuario',
     canLoad: [ LoginGuard ],
@@ -27,7 +32,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, /*, {useHash: true}*/)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

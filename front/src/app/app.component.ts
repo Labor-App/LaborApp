@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Event, Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { Component } from '@angular/core';
+import { Event, Router, NavigationStart, NavigationEnd, RouterOutlet } from '@angular/router';
+import { Animations, slider } from './route-animations';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    slider
+  ]
 })
 export class AppComponent {
   title = 'LaborApp';
@@ -18,7 +23,7 @@ export class AppComponent {
     this._router.events.subscribe((routerEvent: Event) => {
 
       if (routerEvent instanceof NavigationStart) {
-        if(routerEvent['url'] === '/login' || routerEvent['url'] === '/usuario'){
+        if(/*routerEvent['url'] === '/login' ||*/ routerEvent['url'] === '/usuario'){
           this.showSpiner = true;
         }
       }
@@ -33,6 +38,10 @@ export class AppComponent {
       }
     })
 
+  }
+
+  prepareRoute( outlet: RouterOutlet ) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 
 

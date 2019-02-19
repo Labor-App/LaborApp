@@ -8,6 +8,7 @@
   </div>
 </div>
 
+<main [@routerAnimations]="prepareRoute(outlet)" class="content">
 
-
-<router-outlet></router-outlet>
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
