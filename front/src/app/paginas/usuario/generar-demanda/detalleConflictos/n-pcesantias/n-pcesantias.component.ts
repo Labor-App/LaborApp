@@ -12,6 +12,9 @@ export class NPcesantiasComponent implements OnInit, AfterContentChecked {
   formDetailNoPagoCesantias: FormGroup;
   formcheked: boolean;
 
+  hoy = new Date(JSON.parse(localStorage.getItem('contratoData')).general.fechaFinalContrato)
+  minDate = new Date(JSON.parse(localStorage.getItem('contratoData')).general.fechaInicioContrato)
+
   constructor(
     private router_: Router,
     private formBuilder: FormBuilder,

@@ -10,6 +10,7 @@
         <input
           matInput
           (click)="picker.open()"
+          (touchend)="picker.open()"
           [min]="minDate"
           [max]="maxDate"
           [matDatepicker]="picker"

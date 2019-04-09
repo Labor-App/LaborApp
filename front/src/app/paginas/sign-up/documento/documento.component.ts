@@ -18,7 +18,7 @@ export class DocumentoComponent implements OnInit {
     // Se instancia la clase FormBuilder en el constructor
     this.documento = formBuilder.group({
       'genero': [null, Validators.required],
-      'cedula': [null, Validators.required],
+      'cedula': [null, Validators.compose([Validators.required, Validators.pattern(/^[0-9]+$/)])],
       'lugarCedula': [null, Validators.required]
       // Se ingresan los campos del formulario que se quieren validar
 

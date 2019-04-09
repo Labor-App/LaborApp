@@ -12,7 +12,8 @@ export class NPprimaComponent implements OnInit {
   detailFormPrimaPay: FormGroup;
   formcheked: boolean;
   dataOfConflict: any;
-
+  hoy = new Date(JSON.parse(localStorage.getItem('contratoData')).general.fechaFinalContrato)
+  minDate = new Date(JSON.parse(localStorage.getItem('contratoData')).general.fechaInicioContrato)
 
   constructor(
     private formBuilder: FormBuilder,

@@ -10,14 +10,19 @@
       
       
         <mat-form-field class="half-width">
-            <input matInput [matDatepicker]="picker1" placeholder="Ingrese fecha de inicio de no pago de prima" 
+            <input 
+            [min]="minDate"
+            [max]="hoy"
+            matInput [matDatepicker]="picker1" placeholder="Ingrese fecha de inicio de no pago de prima" 
             (click)="picker1.open()" formControlName="inicioNoPagoPrima" >
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker touchUi #picker1></mat-datepicker>
           </mat-form-field>
 
           <mat-form-field class="half-width" >
-              <input matInput [matDatepicker]="picker2" placeholder="Ingrese fecha de final  de no pago de prima" 
+              <input 
+              [min]="picker1._validSelected"
+              [max]="hoy"matInput [matDatepicker]="picker2" placeholder="Ingrese fecha de final  de no pago de prima" 
               (click)="picker2.open()" formControlName="finalNoPagoPrima"  >
               <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
               <mat-datepicker touchUi #picker2></mat-datepicker>

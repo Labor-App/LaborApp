@@ -22,7 +22,7 @@ import { MatSnackBar } from '@angular/material';
   templateUrl: './datos-contrato.component.html',
   styleUrls: ['./datos-contrato.component.css']
 })
-export class DatosContratoComponent implements OnInit, AfterContentChecked {
+export class DatosContratoComponent {
 
   formularioContrato: FormGroup;
   FormCheked: boolean;
@@ -51,9 +51,10 @@ export class DatosContratoComponent implements OnInit, AfterContentChecked {
     });
     this.FormCheked = true;
   }
+  hoy = new Date()
+  minDate = new Date(this.hoy.getFullYear() - 5, this.hoy.getMonth(), this.hoy.getDate())
+  
 
-  ngOnInit() { }
-  ngAfterContentChecked() { }
 
   subirDatosContrato() {
 

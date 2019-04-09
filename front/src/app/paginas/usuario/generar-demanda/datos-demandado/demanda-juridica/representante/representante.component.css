@@ -16,3 +16,12 @@
 .half-width{
   width: 49%;
 }
+
+@media (max-width: 470px) {
+  .nombre-inputs {
+    flex-direction: column;
+  }
+  .half-width {
+    width: 100%;
+  }
+}

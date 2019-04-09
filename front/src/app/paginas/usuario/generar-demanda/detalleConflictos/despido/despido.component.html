@@ -9,8 +9,14 @@
       
   
         <mat-form-field class="full-width">
-            <input matInput [matDatepicker]="picker1" placeholder="Ingrese fecha de despido injustificado" 
-            (click)="picker1.open()" formControlName="fechaDespidoSJC" >
+            <input 
+              matInput 
+              [min]="minDate"
+              [max]="hoy"
+              [matDatepicker]="picker1"  
+              placeholder="Ingrese fecha de despido injustificado" 
+              (click)="picker1.open()" 
+              formControlName="fechaDespidoSJC" >
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker touchUi #picker1></mat-datepicker>
           </mat-form-field>

@@ -15,7 +15,8 @@ export class NPsalarioComponent implements OnInit {
   formcheked: boolean;
   dataOfConflict: any;
 
-
+  hoy = new Date(JSON.parse(localStorage.getItem('contratoData')).general.fechaFinalContrato)
+  minDate = new Date(JSON.parse(localStorage.getItem('contratoData')).general.fechaInicioContrato)
   constructor(
     private formBuilder: FormBuilder,
     private router_: Router,

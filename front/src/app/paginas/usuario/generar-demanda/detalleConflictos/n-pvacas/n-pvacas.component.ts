@@ -13,6 +13,9 @@ export class NPvacasComponent implements OnInit, AfterContentChecked {
   formularioDetalleNoPagoVacas: FormGroup;
   formcheked: boolean;
 
+  hoy = new Date(JSON.parse(localStorage.getItem('contratoData')).general.fechaFinalContrato)
+  minDate = new Date(JSON.parse(localStorage.getItem('contratoData')).general.fechaInicioContrato)
+
   constructor(
     private router_: Router,
     private formBuilder: FormBuilder,

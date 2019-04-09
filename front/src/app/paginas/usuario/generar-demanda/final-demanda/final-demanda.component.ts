@@ -25,7 +25,7 @@ export class FinalDemandaComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router_:Router,
+    private router_: Router,
     private activatedRoute: ActivatedRoute,
     public snackBar: MatSnackBar,
     private localStorageService: LocalStorageService,
@@ -47,19 +47,19 @@ export class FinalDemandaComponent implements OnInit {
       this.snackBar.open('En breve se generá su demanda', '', {
         duration: 2500,
       });
+
+      console.log(this.obtenerDatosConflictos());
+
+      this.finalDemandaService.guardarTodosConflictos(this.obtenerDatosConflictos()).
+        subscribe((resul) => {
+
+          this.generarPdf()
+          this.router_.navigate(['../../home'], { relativeTo: this.activatedRoute });
+        }, error => {
+          console.log(error);
+        });
+
     }
-
-    console.log(this.obtenerDatosConflictos());
-
-    this.finalDemandaService.guardarTodosConflictos(this.obtenerDatosConflictos()).
-      subscribe((resul) => {
-        
-        this.generarPdf()
-        this.router_.navigate(['../../home'], { relativeTo: this.activatedRoute });
-      }, error => {
-        console.log(error);
-      });
-
   }
 
   detectarConflictoContactaAbogado(): any {

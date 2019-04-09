@@ -36,15 +36,29 @@
     <div class="full-width nombre-inputs ">
 
       <mat-form-field class="half-width">
-        <input matInput [matDatepicker]="picker1" placeholder="Fecha Inicio de Contrato" 
-        (click)="picker1.open()" formControlName="fechaInicioContrato">
+        <input 
+          matInput
+          [min]="minDate"
+          [max]="hoy"
+          [matDatepicker]="picker1" 
+          placeholder="Fecha Inicio de Contrato" 
+          (click)="picker1.open()" 
+          (touchend)="picker1.open()"
+          formControlName="fechaInicioContrato">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker touchUi #picker1></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field class="half-width">
-        <input matInput [matDatepicker]="picker2" placeholder="Fecha Final de Contrato" 
-        (click)="picker2.open()" formControlName="fechaFinalContrato">
+        <input 
+          matInput 
+          [min]="picker1._validSelected"
+          [max]="hoy"
+          [matDatepicker]="picker2" 
+          placeholder="Fecha Final de Contrato" 
+          (touchend)="picker2.open()"
+          (click)="picker2.open()" 
+          formControlName="fechaFinalContrato">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker touchUi #picker2></mat-datepicker>
       </mat-form-field>

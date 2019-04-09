@@ -1,20 +1,27 @@
-
-form{
+form {
   width: 100%;
-	height: 100%;
+  height: 100%;
   display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.nombre-inputs{
+.nombre-inputs {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.half-width{
+.half-width {
   width: 49%;
+}
+
+@media (max-width: 470px) {
+  .nombre-inputs {
+    flex-direction: column;
+  }
+  .half-width {
+    width: 100%;
+  }
 }
